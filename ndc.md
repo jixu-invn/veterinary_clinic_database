@@ -69,8 +69,8 @@ Un médicament ne pourra être préscrit qu'à certaines espèces bien définies
  - Molécules concernées
  - Nom du vétérinaire
     
-Nous allons considéré qu'un traitement peut contenir plusieurs médicaments dont durée d'administration pourra varier. Cela évitera de créer plusieurs traitements ne contenant qu'un médicament mais avec des durées différentes.
-Notons que ces informations sur les traitements n'est pas destiné aux clients donc il n'y a pas de nécessité d'avoir plus de détails tels que la fréquence d'administration du médicament, etc.
+Nous allons considérer qu'un traitement peut contenir plusieurs médicaments dont la durée d'administration pourra varier. Cela évitera de créer plusieurs traitements ne contenant qu'un médicament mais avec des durées différentes.
+Notons que ces informations sur les traitements ne sont pas destinées aux clients, il n'y a donc pas de nécessité d'avoir plus de détails tels que la fréquence d'administration du médicament, etc.
     
 **AMBIGUITES**
 - Un animal peut-il avoir deux traitements différents en même temps?
@@ -110,7 +110,6 @@ Selon la volumétrie indicative des projets, la base de données devra contenir�
 
 - Le code informatique devra s’exécuter correctement selon la version de PostgreSQL installée sur les serveurs de l’UTC
 - Les applications seront potentiellement réalisées en PHP et être déployées sur les serveurs de l’UTC.
-Délais :
 - Les livrables seront rendu à question d’un par semaine dans l’ordre énoncé précédemment à partir du mardi 12 mars 2019. La date de rendu du projet est estimée entre le 17 et le 30 juin 2019.
 
 # Rappels à éclaicir avec le client
