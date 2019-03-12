@@ -123,7 +123,7 @@ Selon la volumétrie indicative des projets, la base de données devra contenir�
 - Un animal peut-il avoir deux traitements différents en même temps?
 - A quoi correspond la quantité journalière? A noter qu'une valeur quantitative standardisée permettra de fournir des informations statistiques.
 
-**Important**: si ces points n'ont pas été clarifiés par le client d'ici le Dimanche 17 Marc, nous ferons des choix que nous recenserons dans une note de révision
+**Important**: si ces points n'ont pas été clarifiés par le client d'ici le Dimanche 17 Mars, nous ferons des choix que nous recenserons dans une note de révision
 afin de pouvoir établir notre modèle conceptuel.
     
 # Acteurs du projet
