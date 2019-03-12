@@ -17,9 +17,9 @@ Le client souhaite disposer des éléments ci-dessous dans sa base de données. 
 - Numéro de téléphone
 
 Les clients possèdent un ou plusieurs animaux.
-On remarque qu'il faudra laisser la possiblité à un client de devenir personnel (*sauf si le client ne le souhaite pas*).
+On remarque qu'il faudra laisser la possiblité à un client de devenir personnel (*sauf si notre client ne le souhaite pas*).
 
-## Personnels :
+## Personnels 
 - Noms
 - Prénoms
 - Date de naissance
