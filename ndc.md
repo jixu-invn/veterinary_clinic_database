@@ -112,7 +112,7 @@ Selon la volumétrie indicative des projets, la base de données devra contenir�
 - Les applications seront potentiellement réalisées en PHP et être déployées sur les serveurs de l’UTC.
 - Les livrables seront rendu à question d’un par semaine dans l’ordre énoncé précédemment à partir du mardi 12 mars 2019. La date de rendu du projet est estimée entre le 17 et le 30 juin 2019.
 
-# Rappels à éclaicir avec le client
+# Rappels des points à éclaicir avec le client
 
 - La clinique veut-elle la possibilité d'ajouter des spécialités elle-même ou préfère-t-elle avoir une spécialité dite "autres"?
 - La clinique souhaite-elle qu'un ex-personnel puisse avoir son animal soigné dans la clinique? Si tel est le cas, on ajoutera la fin du contrat comme information.
