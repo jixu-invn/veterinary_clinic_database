@@ -17,6 +17,7 @@ Le client souhaite disposer des éléments ci-dessous dans sa base de données. 
 - Numéro de téléphone
 
 Les clients possèdent un ou plusieurs animaux.
+On remarque qu'il faudra laisser la possiblité à un client de devenir personnel (*sauf si notre client ne le souhaite pas*).
 
 ## Personnels 
 - Noms
@@ -31,8 +32,9 @@ Le personnel ne peut pas posséder d'animal traité dans la clinique. Un vétér
 
 Un personnel ne peut pas être supprimé de la base de donnée car il est nécessaire de pouvoir garder un historique des personnes ayant prescrit des traitements.
 
-La clinique peut ajouter des spécialités elle-même 
-
+**AMBIGUITES**:
+- La clinique veut-elle la possibilité d'ajouter des spécialités elle-même ou préfère-t-elle avoir une spécialité dite "autres"?
+- La clinique souhaite-elle qu'un ex-personnel puisse avoir son animal soigné dans la clinique? Si tel est le cas, on ajoutera la fin du contrat comme information.
 
 ## Animaux
 - Nom
@@ -43,9 +45,9 @@ La clinique peut ajouter des spécialités elle-même
 
 Un animal possède un *unique* propriétaire. Différents médecins peuvent préscrire des traitements à un même animal.
 
-
-- Pas d'espèces autres.
-- Un médecin non spécialisé dans la classe de l'animal peut lui prescrire un traitement.
+**AMBIGUITES**
+- Comme pour le paragraphe précédent, faut-il laisser la possiblité d'ajouter une espèce ou un espèce dite "autres" convient-elle?
+- Un médecin non spécialisé dans l'espèce de l'animal peut-il lui prescrire un traitement?
 
 ## Médicaments
 
@@ -54,23 +56,25 @@ Un animal possède un *unique* propriétaire. Différents médecins peuvent pré
     
 Un médicament ne pourra être préscrit qu'à certaines espèces bien définies.
 
-
-Les médicaments sont identifiés par le nom de la molécule.
-
+**AMBIGUITES**:
+- Plusieurs médicaments peuvent-ils avoir la même molécule?
+- Une gestion des stocks ne serait-elle pas souhaitée pour éviter de précrire un médicament non disponible?
 
 ## Traitement :
  - Animal concerné
  - Début
  - Durée
  - Nom
- - Quantité à prendre par jour en mg/jour
+ - Quantité à prendre par jour
  - Molécules concernées
  - Nom du vétérinaire
     
 Nous allons considérer qu'un traitement peut contenir plusieurs médicaments dont la durée d'administration pourra varier. Cela évitera de créer plusieurs traitements ne contenant qu'un médicament mais avec des durées différentes.
 Notons que ces informations sur les traitements ne sont pas destinées aux clients, il n'y a donc pas de nécessité d'avoir plus de détails tels que la fréquence d'administration du médicament, etc.
     
-Des vétérinaires différents peuvent prescrire plusieurs traitements au même animal
+**AMBIGUITES**
+- Un animal peut-il avoir deux traitements différents en même temps?
+- A quoi correspond la quantité? A noter qu'une valeur quantitative standardisée permettra de fournir des informations statistiques.
 
 
 ## Informations statistiques
@@ -108,8 +112,19 @@ Selon la volumétrie indicative des projets, la base de données devra contenir�
 - Les applications seront potentiellement réalisées en PHP et être déployées sur les serveurs de l’UTC.
 - Les livrables seront rendu à question d’un par semaine dans l’ordre énoncé précédemment à partir du mardi 12 mars 2019. La date de rendu du projet est estimée entre le 17 et le 30 juin 2019.
 
+# Rappels des points à éclaicir avec le client
 
+- La clinique veut-elle la possibilité d'ajouter des spécialités elle-même ou préfère-t-elle avoir une spécialité dite "autres"?
+- La clinique souhaite-elle qu'un ex-personnel puisse avoir son animal soigné dans la clinique? Si tel est le cas, on ajoutera la fin du contrat comme information.
+- Comme pour le paragraphe précédent, faut-il laisser la possiblité d'ajouter une espèce ou un espèce dite "autres" convient-elle?
+- Un médecin non spécialisé dans l'espèce de l'animal peut-il lui prescrire un traitement?
+- Plusieurs médicaments peuvent-ils avoir la même molécule?
+- Une gestion des stocks ne serait-elle pas souhaitée pour éviter de précrire un médicament non disponible?
+- Un animal peut-il avoir deux traitements différents en même temps?
+- A quoi correspond la quantité journalière? A noter qu'une valeur quantitative standardisée permettra de fournir des informations statistiques.
 
+**Important**: si ces points n'ont pas été clarifiés par le client d'ici le Dimanche 17 Mars, nous ferons des choix que nous recenserons dans une note de révision
+afin de pouvoir établir notre modèle conceptuel.
     
 # Acteurs du projet
 
