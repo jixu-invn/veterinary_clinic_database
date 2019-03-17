@@ -1,6 +1,3 @@
-Modèle conceptuel de données
-===
-```plantuml
 @startuml
 hide circle
 
@@ -78,4 +75,3 @@ note "On considère qu'une espèce n'appartient qu'à une seule classe d'espèce
 Classe_espèces_animales .. N3
 Contient .. N2
 @enduml
-```
