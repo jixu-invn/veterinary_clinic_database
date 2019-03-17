@@ -6,6 +6,7 @@ abstract class Individu {
   Prénom : string
   Date de naissance : Date
   Adresse : string
+  @@@ Note Jiali: On enlève la limite de longueur au cas où?(ex. +33 6....)
   Téléphone : string {Composé uniquement de 10 numéros}
 }
 
@@ -26,6 +27,9 @@ class Animal{
   Année : int {Peut-être manquant; taille > 1800}
   Mois : int {Peut-être manquant; mois entre 1 et 12}
   Jour : int {Peut-être manquant; jour entre 1 et 31/30/28 selon le mois}
+  
+  @@@ Modif Jiali:
+  Propriétaire: string
 
   maj_poids()
   maj_taille()
@@ -61,6 +65,7 @@ Personnel "*" -- "1" Classe_espèces_animales: a pour spécialité >
 Espèce "*" -- "1" Classe_espèces_animales: appartient à >
 Animal "*" -- "1" Espèce: appartient à >
 Client "1" -- "*" Animal : possède >
+@@@ Note Jiali: Médicament "1" -- "*" Animal
 Médicament "*" -- "*" Animal : est autorisé pour >
 Vétérinaire "1" -- "*" Traitement : prescrit >
 Traitement "*" -- "1" Animal : est prescit à >
