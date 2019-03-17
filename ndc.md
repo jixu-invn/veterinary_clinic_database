@@ -26,7 +26,7 @@ On remarque qu'il faudra laisser la possiblité à un client de devenir personne
 - Adresse
 - Numéro de téléphone
 - Poste (vétérinaire ou assistant)
-- Spécialité (mammifère, reptiles, oiseaux, autres)
+- Spécialité (classe d'espèces:mammifère, reptiles, oiseaux, autres)
 
 Le personnel ne peut pas posséder d'animal traité dans la clinique. Un vétérinaire peut prescrire un traitement. Il peut préscrire plusieurs traitement à différents animaux.
 
@@ -46,7 +46,7 @@ Un personnel ne peut pas être supprimé de la base de donnée car il est néces
 Un animal possède un *unique* propriétaire. Différents médecins peuvent préscrire des traitements à un même animal.
 
 **AMBIGUITES**
-- Comme pour le paragraphe précédent, faut-il laisser la possiblité d'ajouter une espèce ou un espèce dite "autres" convient-elle?
+- Comme pour le paragraphe précédent, faut-il laisser la possiblité d'ajouter une espèce ou une espèce dite "autres" convient-elle?
 - Un médecin non spécialisé dans l'espèce de l'animal peut-il lui prescrire un traitement?
 
 ## Médicaments
