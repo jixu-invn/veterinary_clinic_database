@@ -23,8 +23,8 @@ class Classe_espèces_animales{
 class Animal{
   Nom : string
   Dernier poids mesuré : float {Peut-être manquant; poids >0}
-  Dernière taille mesurée : float {Peut-être manquant; taille >0}
-  Année : int {Peut-être manquant; taille > 1800}
+  Dernière taille mesurée : int {Peut-être manquant; taille >0}
+  Année : int {Peut-être manquant; année > 1800}
   Mois : int {Peut-être manquant; mois entre 1 et 12}
   Jour : int {Peut-être manquant; jour entre 1 et 31/30/28 selon le mois}
   
@@ -76,7 +76,11 @@ Traitement "*" -- "1..*" Médicament
 note "Tous les héritages sont exclusifs" as N1
 note "La quantité est en mg/j" as N2
 note "On considère qu'une espèce n'appartient qu'à une seule classe d'espèces (cela pourra être modifié si notre client le souhaite)" as N3
+note "taille en cm" as N4
+note "poids en kg" as N5
 
+Animal .. N4
+Animal .. N5
 Classe_espèces_animales .. N3
 Contient .. N2
 @enduml
