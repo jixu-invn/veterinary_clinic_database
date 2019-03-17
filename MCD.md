@@ -1,0 +1,81 @@
+Modèle conceptuel de données
+===
+```plantuml
+@startuml
+hide circle
+
+abstract class Individu {
+  Nom : string
+  Prénom : string
+  Date de naissance : Date
+  Adresse : string
+  Téléphone : string {Composé uniquement de 10 numéros}
+}
+
+class Client {
+}
+
+abstract class Personnel{
+}
+
+class Classe_espèces_animales{
+  nom : string {key}
+}
+
+class Animal{
+  Nom : string
+  Dernier poids mesuré : float {Peut-être manquant; poids >0}
+  Dernière taille mesurée : float {Peut-être manquant; taille >0}
+  Année : int {Peut-être manquant; taille > 1800}
+  Mois : int {Peut-être manquant; mois entre 1 et 12}
+  Jour : int {Peut-être manquant; jour entre 1 et 31/30/28 selon le mois}
+
+  maj_poids()
+  maj_taille()
+}
+
+class Espèce{
+  nom : string{key}
+}
+
+class Médicament{
+  molécule : string {key}
+  description : string
+}
+
+class Contient{
+  Début : Date
+  Fin : Date
+  Quantité journalière: float {Quantité>0}
+
+  /Durée_traitement : int
+}
+
+class Traitement{
+  nom : string
+}
+
+Individu <|-- Client
+Individu <|-- Personnel
+Personnel <|-- Assistant
+Personnel <|-- Vétérinaire
+
+Personnel "*" -- "1" Classe_espèces_animales: a pour spécialité >
+Espèce "*" -- "1" Classe_espèces_animales: appartient à >
+Animal "*" -- "1" Espèce: appartient à >
+Client "1" -- "*" Animal : possède >
+Médicament "*" -- "*" Animal : est autorisé pour >
+Vétérinaire "1" -- "*" Traitement : prescrit >
+Traitement "*" -- "1" Animal : est prescit à >
+Traitement "*" -- "1..*" Médicament
+(Traitement,Médicament) .. Contient
+
+
+note "Tous les héritages sont exclusifs" as N1
+note "La quantité est en mg/j" as N2
+note "On considère qu'une espèce n'appartient qu'à une seule classe d'espèces (cela pourra être modifié si notre client le souhaite)" as N3
+
+Classe_espèces_animales .. N3
+Contient .. N2
+@enduml
+```
