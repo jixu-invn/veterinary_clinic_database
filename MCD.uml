@@ -6,8 +6,7 @@ abstract class Individu {
   Prénom : string
   Date de naissance : Date
   Adresse : string
-  @@@ Note Jiali: On enlève la limite de longueur au cas où?(ex. +33 6....)
-  Téléphone : string {Composé uniquement de 10 numéros}
+  Téléphone : string {Respecte l'expression régulière relative aux numéros de téléphone}
 }
 
 class Client {
@@ -23,13 +22,10 @@ class Classe_espèces_animales{
 class Animal{
   Nom : string
   Dernier poids mesuré : float {Peut-être manquant; poids >0}
-  Dernière taille mesurée : int {Peut-être manquant; taille >0}
+  Dernière taille mesurée : float {Peut-être manquant; taille >0}
   Année : int {Peut-être manquant; année > 1800}
   Mois : int {Peut-être manquant; mois entre 1 et 12}
   Jour : int {Peut-être manquant; jour entre 1 et 31/30/28 selon le mois}
-  
-  @@@ Modif Jiali:
-  Propriétaire: string
 
   maj_poids()
   maj_taille()
@@ -46,7 +42,7 @@ class Médicament{
 
 class Contient{
   Début : Date
-  Fin : Date
+  Fin : Date {Fin >= Début}
   Quantité journalière: float {Quantité>0}
 
   /Durée_traitement : int
@@ -64,9 +60,9 @@ Personnel <|-- Vétérinaire
 Personnel "*" -- "1" Classe_espèces_animales: a pour spécialité >
 Espèce "*" -- "1" Classe_espèces_animales: appartient à >
 Animal "*" -- "1" Espèce: appartient à >
-Client "1" -- "*" Animal : possède >
-@@@ Note Jiali: Médicament "1" -- "*" Animal
-Médicament "*" -- "*" Animal : est autorisé pour >
+Client "1" -- "1..*" Animal : possède >
+
+Médicament "*" -- "1..*" Espèce : est autorisé pour >
 Vétérinaire "1" -- "*" Traitement : prescrit >
 Traitement "*" -- "1" Animal : est prescit à >
 Traitement "*" -- "1..*" Médicament
@@ -76,9 +72,13 @@ Traitement "*" -- "1..*" Médicament
 note "Tous les héritages sont exclusifs" as N1
 note "La quantité est en mg/j" as N2
 note "On considère qu'une espèce n'appartient qu'à une seule classe d'espèces (cela pourra être modifié si notre client le souhaite)" as N3
-note "taille en cm" as N4
+note "taille en m" as N4
 note "poids en kg" as N5
+note "les deux bornes sont incluses dans le traitement" as N6
+note "Le poids et la taille peuvent être nuls\n car on considère qu'un animal\n peut-être rentré dans le système\n avant sa première mesure" as N7
 
+Animal .. N7
+Contient .. N6
 Animal .. N4
 Animal .. N5
 Classe_espèces_animales .. N3
