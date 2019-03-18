@@ -76,7 +76,9 @@ note "taille en m" as N4
 note "poids en kg" as N5
 note "les deux bornes sont incluses dans le traitement" as N6
 note "Le poids et la taille peuvent être nuls\n car on considère qu'un animal\n peut-être rentré dans le système\n avant sa première mesure" as N7
+note "CONTRAINTE : Un médicament doit être prescrit à un animal\nd'une espèce autorisée à être traitée avec ce médicament" as N8
 
+Médicament .. N8
 Animal .. N7
 Contient .. N6
 Animal .. N4
