@@ -25,3 +25,6 @@ Pas de gestion des stocks demandée.
 Plusieurs vétérinaires peuvent prescrie à des traitements au même animal.
 
 La quantité journalière est exprimée en mg/j.
+
+# Autre question survenue pendant la création du modèle
+Un traitement doit-il forcément contenir un médicament?
