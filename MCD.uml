@@ -24,9 +24,7 @@ class Animal{
   Dernier poids mesuré : float {Peut-être manquant; poids >0}
   Dernière taille mesurée : float {Peut-être manquant; taille >0}
   Année : int {Peut-être manquant; année > 1800}
-  Mois : int {Peut-être manquant; mois entre 1 et 12}
-  Jour : int {Peut-être manquant; jour entre 1 et 31/30/28 selon le mois}
-
+  
   maj_poids()
   maj_taille()
 }
@@ -41,7 +39,6 @@ class Médicament{
 }
 
 class Contient{
-  Début : Date
   Fin : Date {Fin >= Début}
   Quantité journalière: float {Quantité>0}
 
@@ -50,6 +47,7 @@ class Contient{
 
 class Traitement{
   nom : string
+  debut: date
 }
 
 Individu <|-- Client
