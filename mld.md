@@ -36,8 +36,14 @@ Médicaments(#molécule: string, description: string) avec {description NOT NULL
 Traitement\_contient(#traitement=>Traitements,#medicament=>Médicaments,
  					fin : date, quantité\_journalière: int, /Duree\_traitement : int) avec {Fin>=Traitement.debut et NOT NULL; quantité\_journalière>0, en mg et NOT NULL}
  					
-Projection(Traitement\_contient, traitement)=Projection(Traitements, id)
+
 
 Medicament\_autorisé(#medicament=>Médicaments, #espèce=>Espèces)
+
+Contraintes:
+
+Tout traitement ne peut contenir que des médicaments autorisés pour l'espèce de l'animal
+
+Projection(Traitement\_contient, traitement)=Projection(Traitements, id)
 
 Projection(Medicament\_autorisé, medicament)=Projection(Medicaments,id)
