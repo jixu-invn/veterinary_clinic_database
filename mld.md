@@ -34,5 +34,5 @@ Projection(Medicament\_autorisé, medicament)=Projection(Medicaments,id)
 vIndividu = Union(Projection(Clients, nom, prenom, naissance, adresse, tel), 
                   Union(Projection(Véténaires, nom, prenom, naissance, adresse, tel), Projection(Asistants, nom, prenom, naissance, adresse, tel))))
                   
-vPersonnel = Union(Projection(véténaires, nom, prenom, naissance, adresse, tel), Projection(Asistants, nom, prenom, naissance, adresse, tel))
+vPersonnel = Union(Projection(véténaires, nom, prenom, naissance, adresse, tel, spé), Projection(Asistants, nom, prenom, naissance, adresse, tel, spé))
 
