@@ -8,13 +8,18 @@ Vétérinaires(#id : int, nom : string, prenom : string, naissance : date, adres
 Clients(#id : int, nom : string, prenom : string, naissance : date, adresse : string, tel : string) avec {tel respectant RegEx des numéros de téléphone; nom, prenom, naissance, adresse, tel NOT NULL} 
 
 // A CONFIRMER
+
 Intersection(Projection(Veterinaires,id), Projection(Clients,id)) ={}
+
 Intersection(Projection(Veterinaires,id), Projection(Assistants,id)) ={}
+
 Intersection(Projection(Assistants,id), Projection(Clients,id)) ={}
 // peut-être passage par références pour eviter les contraintes
 
 vIndividu = Union(Projection(Clients,nom,prenom,naissance,adresse,tel),Union(Projection(Vétérinaires,nom,prenom,naissance,adresse,tel),Projection(Assistants,nom,prenom,naissance,adresse,tel))
+
 vPersonnel = Union(Projection(Vétérinaires,nom,prenom,naissance,adresse,tel,spé),Projection(Assistants,nom,prenom,naissance,adresse,tel,spé))
+
 // FIN A CONFIRMER
 
 Classes\_espèces\_animales(#nom : string)
