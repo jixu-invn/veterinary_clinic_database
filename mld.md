@@ -2,9 +2,9 @@ MLD
 ===
 # Relations
 
-**Assistants**(#id : int, nom : string, prenom : string, naissance : date, adresse : string, tel : string, spé=>Classes\_espèces\_animal) avec {tel respectant RegEx des numéros de téléphone; nom, prenom, naissance, adresse, tel NOT NULL} 
+**Assistants**(#id : int, nom : string, prenom : string, naissance : date, adresse : string, tel : string, spé=>Classes\_espèces\_animal) avec {tel respectant RegEx des numéros de téléphone; nom, prenom, naissance, adresse, tel, spé NOT NULL} 
 
-**Vétérinaires**(#id : int, nom : string, prenom : string, naissance : date, adresse : string, tel : string, spé=>Classes\_espèces\_animal) avec {tel respectant RegEx des numéros de téléphone; nom, prenom, naissance, adresse, tel NOT NULL}
+**Vétérinaires**(#id : int, nom : string, prenom : string, naissance : date, adresse : string, tel : string, spé=>Classes\_espèces\_animal) avec {tel respectant RegEx des numéros de téléphone; nom, prenom, naissance, adresse, tel, spé NOT NULL}
 
 **Clients**(#id : int, nom : string, prenom : string, naissance : date, adresse : string, tel : string) avec {tel respectant RegEx des numéros de téléphone; nom, prenom, naissance, adresse, tel NOT NULL} 
 
