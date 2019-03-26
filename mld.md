@@ -15,7 +15,7 @@ MLD
 **Animaux**(#idAnimal: int, nom : string, dernier\_poids : float, derniere\_taille: float, annee\_naissance : int, propriétaire=>Clients, espèce=>Espèces) avec {propriétaire NOT NULL; annee_naissance >1800;
 dernier\_poids>0 et en kg; derniere\_taille>0 et en m; espèce NOT NULL; propriétaire NOT NULL}, maj\_taille(), maj\_poids()
 
-**Traitements**(#idTraitement:int, nom : string, début : date, véto=>Vétérinaires, animal=>Animaux) avec {nom, début NOT NULL}
+**Traitements**(#idTraitement:int, nom : string, début : date, véto=>Vétérinaires, animal=>Animaux) avec {nom, début, véto, animal NOT NULL}
 
 **Médicaments**(#molécule: string, description: string) avec {description NOT NULL}
 
