@@ -66,8 +66,8 @@ cela aurait complexifier la clé et/ou aurait créer une clé primaire non immut
 L'unicité de la clé artificielle entre individus est nécéssaire car en se basant sur le MLD rien empêche deux individus (quelle que soit la classefille dont ils dépendent)
 d'avoir les mêmes attributs naturels. Ainsi, sans clé artificielle unique, l'union et la projection pourraient faire disparaitre des *doublons* et donc faire perdre de l'information.
 
-Nous aurions pu éviter les contraintes sur les id des individus en faisant un *héritage par référence* mais cela aurait **alourdi** le MLD (si le client préfère cette option
-nous pourrons changer très simplement le MLD).
+Nous aurions pu éviter les contraintes sur les id des individus en faisant un *héritage par référence* mais cela aurait **alourdi** le MLD (*si le client préfère cette option
+nous pourrons changer très simplement le MLD*).
 
 ## Clés artificielles pour Animaux et Traitement
 Dans ces deux classes, nous avons décidé d'utiliser des clés artificelles pour avoir les clés primaires **les plus simples**.
