@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS Médicament_autorisé;
+DROP TABLE IF EXISTS Traitement_contient;
+DROP TABLE IF EXISTS Médicaments;
+DROP TABLE IF EXISTS Traitements;
+DROP TABLE IF EXISTS Animaux;
+DROP TABLE IF EXISTS Espèces;
+DROP TABLE IF EXISTS Clients;
+DROP TABLE IF EXISTS Vétérinaires;
+DROP TABLE IF EXISTS Assistants;
+DROP TABLE IF EXISTS Classes_especes_animales;
