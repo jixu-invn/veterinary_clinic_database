@@ -12,11 +12,15 @@ INSERT INTO Assistants VALUES ('1','Wagner','Gerard','1965-08-25','12 rue des pe
 INSERT INTO Assistants VALUES ('2','Gaudron','Michel','1978-09-25','40 rue de la rose, Compiegne','0542788965','poisson');
 INSERT INTO Assistants VALUES ('3','Delarue','Francoise','1973-01-05','39 avenue jules ferry, Lyon','0378459632','reptile');
 INSERT INTO Assistants VALUES ('4','Delaporte','Henry','1960-02-26','10 le vautron, Sablonnieres','0285963274','oiseau');
+/*INSERT INTO Assistants VALUES ('7','Wagner','Gerard','1965-08-25','12 rue des peupliers, Paris','0978458652','mammifere');
+ERREUR: la valeur d'une clé dupliquée rompt la contrainte unique « assistants_nom_prenom_naissance_key » DETAIL: La clé « (nom, prenom, naissance)=(Wagner, Gerard, 1965-08-25) » existe déjà*/
 
 INSERT INTO Vétérinaires VALUES ('1','Corsair','Pascal','1974-07-22','5 rue de l''auberge, Reims','0548789631','poisson');
 INSERT INTO Vétérinaires VALUES ('2','Lamart','Marc','1990-04-15','2 rue de compiegne, Soissons','0478956314','mammifere');
 INSERT INTO Vétérinaires VALUES ('3','Colombain','Sebastien','1985-08-30','8 boulevard malesherbes, Paris','0164044098','reptile');
 INSERT INTO Vétérinaires VALUES ('4','Sorel','Valerie','1968-04-24','10 place de la bourse, Autreville','0578946321','oiseau');
+/*INSERT INTO Vétérinaires VALUES ('4','Oak','Samuel','1968-04-24','Bourg-Palette, Autreville','0578946321','oiseau');
+la valeur d'une clé dupliquée rompt la contrainte unique « vétérinaires_pkey » DETAIL: La clé « (id)=(4) » existe déjà*/
 
 INSERT INTO Clients VALUES ('1','Jugnot','Gerard','1955-12-04','255 avenue foch, Paris','0745869621');
 INSERT INTO Clients VALUES ('2','Belmondo','Jean-Paul','1964-09-10','1024 boulevard de la vilette, Niors','0515487959');
