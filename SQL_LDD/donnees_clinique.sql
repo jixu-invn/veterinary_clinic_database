@@ -28,10 +28,10 @@ INSERT INTO Espèces VALUES ('crocodile','reptile');
 INSERT INTO Espèces VALUES ('truite','poisson');
 INSERT INTO Espèces VALUES ('perruche','oiseau');
 
-INSERT INTO Animaux VALUES ('1','Griffon','25.3','105.8','2012','1','chien');
-INSERT INTO Animaux VALUES ('2','Manu','208.7','258.4','2013','2','crocodile');
-INSERT INTO Animaux VALUES ('3','Myrtille','2.4','26.8','2014','3','truite');
-INSERT INTO Animaux VALUES ('4','Pierre','0.456','14.7','2015','4','perruche');
+INSERT INTO Animaux VALUES ('1','Griffon','25.3','1.058','2012','1','chien');
+INSERT INTO Animaux VALUES ('2','Manu','208.7','2.584','2013','2','crocodile');
+INSERT INTO Animaux VALUES ('3','Myrtille','2.4','.268','2014','3','truite');
+INSERT INTO Animaux VALUES ('4','Pierre','0.456','.147','2015','4','perruche');
 
 INSERT INTO Traitements VALUES ('1','traitement foie','2015-06-06','1','1');
 INSERT INTO Traitements VALUES ('2','traitement oeil','2015-06-07','2','2');
