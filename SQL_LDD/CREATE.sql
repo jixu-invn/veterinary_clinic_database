@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS Vétérinaires;
 DROP TABLE IF EXISTS Assistants;
 DROP TABLE IF EXISTS Classes_especes_animales;
 
-
+###Comm: On ajoute AUTO_INCREMENT pour tous les ids?
 CREATE TABLE Classes_especes_animales(nom VARCHAR(30) PRIMARY KEY);
 
 CREATE TABLE Assistants
