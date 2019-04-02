@@ -1,3 +1,6 @@
+DROP VIEW IF EXISTS vIndividu;
+DROP VIEW IF EXISTS vPersonnel;
+
 DROP TABLE IF EXISTS Medicament_autorise;
 DROP TABLE IF EXISTS Traitement_contient;
 DROP TABLE IF EXISTS Medicaments;
@@ -88,3 +91,9 @@ CREATE TABLE Medicament_autorise(
             FOREIGN KEY (espece) REFERENCES Especes(nom),
             PRIMARY KEY (medicament, espece)
           );
+          
+CREATE VIEW vPersonnel AS
+SELECT * FROM(SELECT * FROM Assistants UNION SELECT * FROM Veterinaires) Personnel;
+
+CREATE VIEW vIndividu AS
+SELECT * FROM((SELECT id,nom,prenom,naissance,adresse,tel FROM Assistants UNION SELECT id,nom,prenom,naissance,adresse,tel FROM Veterinaires) UNION SELECT * FROM Clients) Indiv;
