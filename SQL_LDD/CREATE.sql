@@ -93,7 +93,7 @@ CREATE TABLE Medicament_autorise(
           );
           
 CREATE VIEW vPersonnel AS
-SELECT * FROM(SELECT * FROM Assistants UNION SELECT * FROM Veterinaires) Personnel;
+SELECT * FROM(SELECT  nom,prenom,naissance,adresse,tel,spe FROM Assistants UNION SELECT nom,prenom,naissance,adresse,tel,spe FROM Veterinaires) Personnel;
 
 CREATE VIEW vIndividu AS
-SELECT * FROM((SELECT id,nom,prenom,naissance,adresse,tel FROM Assistants UNION SELECT id,nom,prenom,naissance,adresse,tel FROM Veterinaires) UNION SELECT * FROM Clients) Indiv;
+SELECT * FROM((SELECT nom,prenom,naissance,adresse,tel FROM Assistants UNION SELECT nom,prenom,naissance,adresse,tel FROM Veterinaires) UNION SELECT nom,prenom,naissance,adresse,tel FROM Clients) Indiv;
