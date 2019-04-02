@@ -1,3 +1,6 @@
+DROP VIEW IF EXISTS vPersonnel;
+DROP VIEW IF EXISTS vIndividu;
+
 DROP TABLE IF EXISTS Medicament_autorise;
 DROP TABLE IF EXISTS Traitement_contient;
 DROP TABLE IF EXISTS Medicaments;
