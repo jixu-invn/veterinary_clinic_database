@@ -1,15 +1,14 @@
-DROP TABLE IF EXISTS Médicament_autorisé;
+DROP TABLE IF EXISTS Medicament_autorise;
 DROP TABLE IF EXISTS Traitement_contient;
-DROP TABLE IF EXISTS Médicaments;
+DROP TABLE IF EXISTS Medicaments;
 DROP TABLE IF EXISTS Traitements;
 DROP TABLE IF EXISTS Animaux;
-DROP TABLE IF EXISTS Espèces;
+DROP TABLE IF EXISTS Especes;
 DROP TABLE IF EXISTS Clients;
-DROP TABLE IF EXISTS Vétérinaires;
+DROP TABLE IF EXISTS Veterinaires;
 DROP TABLE IF EXISTS Assistants;
 DROP TABLE IF EXISTS Classes_especes_animales;
 
-###Comm: On ajoute AUTO_INCREMENT pour tous les ids?
 CREATE TABLE Classes_especes_animales(nom VARCHAR(30) PRIMARY KEY);
 
 CREATE TABLE Assistants
@@ -24,7 +23,7 @@ CREATE TABLE Assistants
               FOREIGN KEY (spe) REFERENCES Classes_especes_animales(nom)
             );
 
-CREATE TABLE Vétérinaires
+CREATE TABLE Veterinaires
               (id INTEGER PRIMARY KEY ,
               nom VARCHAR(30) NOT NULL,
               prenom VARCHAR(30) NOT NULL,
@@ -32,7 +31,7 @@ CREATE TABLE Vétérinaires
               adresse VARCHAR(300),
               tel VARCHAR(14), -- TODO RegEx pour postgres https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
               spe VARCHAR(30) NOT NULL,
-              UNIQUE(nom,prenom,naissance), -- On définit une clé candidate
+              UNIQUE(nom,prenom,naissance), -- On definit une cle candidate
               FOREIGN KEY (spe) REFERENCES Classes_especes_animales(nom)
             );
 
@@ -43,10 +42,10 @@ CREATE TABLE Clients
               naissance date NOT NULL,
               adresse VARCHAR(300),
               tel VARCHAR(14), -- TODO RegEx pour postgres https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
-              UNIQUE(nom,prenom,naissance) -- On définit une clé candidate
+              UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
             );
 
-CREATE TABLE Espèces(nom VARCHAR(50) PRIMARY KEY, classe VARCHAR(30), FOREIGN KEY (classe) REFERENCES Classes_especes_animales(nom));
+CREATE TABLE Especes(nom VARCHAR(50) PRIMARY KEY, classe VARCHAR(30), FOREIGN KEY (classe) REFERENCES Classes_especes_animales(nom));
 
 CREATE TABLE Animaux
             (id INTEGER PRIMARY KEY ,
@@ -54,10 +53,10 @@ CREATE TABLE Animaux
             dernier_poids FLOAT CHECK (dernier_poids>0),
             derniere_taille FLOAT CHECK (derniere_taille>0),
             annee_naissance INTEGER CHECK (ANNEE_NAISSANCE > 1800),
-            propriétaire INTEGER NOT NULL,
+            proprietaire INTEGER NOT NULL,
             espece VARCHAR(50) NOT NULL,
-            FOREIGN KEY (espece) REFERENCES Espèces(nom),
-            FOREIGN KEY (propriétaire) REFERENCES Clients(id)
+            FOREIGN KEY (espece) REFERENCES Especes(nom),
+            FOREIGN KEY (proprietaire) REFERENCES Clients(id)
           );
 
 CREATE TABLE Traitements(
@@ -66,11 +65,11 @@ CREATE TABLE Traitements(
             debut DATE NOT NULL,
             veto INTEGER NOT NULL,
             animal INTEGER NOT NULL,
-            FOREIGN KEY (veto) REFERENCES Vétérinaires(id),
+            FOREIGN KEY (veto) REFERENCES Veterinaires(id),
             FOREIGN KEY (animal) REFERENCES Animaux(id)
 );
 
-CREATE TABLE Médicaments(molécule VARCHAR(50) PRIMARY KEY, description VARCHAR(300) NOT NULL);
+CREATE TABLE Medicaments(molecule VARCHAR(50) PRIMARY KEY, description VARCHAR(300) NOT NULL);
 
 CREATE TABLE Traitement_contient (
             traitement INTEGER,
@@ -78,14 +77,14 @@ CREATE TABLE Traitement_contient (
             fin DATE NOT NULL,
             quantite_journaliere INTEGER NOT NULL CHECK(quantite_journaliere>0),
             FOREIGN KEY (traitement) REFERENCES Traitements(id),
-            FOREIGN KEY (medicament) REFERENCES Médicaments(molécule),
+            FOREIGN KEY (medicament) REFERENCES Medicaments(molecule),
             PRIMARY KEY (traitement, medicament)
           );
 
-CREATE TABLE Médicament_autorisé(
+CREATE TABLE Medicament_autorise(
             medicament VARCHAR(50),
-            espèce VARCHAR(50),
-            FOREIGN KEY (medicament) REFERENCES Médicaments(molécule),
-            FOREIGN KEY (espèce) REFERENCES Espèces(nom),
-            PRIMARY KEY (medicament, espèce)
+            espece VARCHAR(50),
+            FOREIGN KEY (medicament) REFERENCES Medicaments(molecule),
+            FOREIGN KEY (espece) REFERENCES Especes(nom),
+            PRIMARY KEY (medicament, espece)
           );
