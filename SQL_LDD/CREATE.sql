@@ -20,7 +20,7 @@ CREATE TABLE Assistants
               prenom VARCHAR(30) NOT NULL,
               naissance date NOT NULL,
               adresse VARCHAR(300),
-              tel VARCHAR(14), -- TODO RegEx pour postgres https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
+              tel VARCHAR(10) CHECK (tel ~ '[[:digit:]]{10}'),
               spe VARCHAR(30) NOT NULL,
               UNIQUE(nom,prenom,naissance),
               FOREIGN KEY (spe) REFERENCES Classes_especes_animales(nom)
@@ -32,7 +32,7 @@ CREATE TABLE Veterinaires
               prenom VARCHAR(30) NOT NULL,
               naissance date NOT NULL,
               adresse VARCHAR(300),
-              tel VARCHAR(14), -- TODO RegEx pour postgres https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
+              tel VARCHAR(10) CHECK (tel ~ '[[:digit:]]{10}'),
               spe VARCHAR(30) NOT NULL,
               UNIQUE(nom,prenom,naissance), -- On definit une cle candidate
               FOREIGN KEY (spe) REFERENCES Classes_especes_animales(nom)
@@ -44,7 +44,7 @@ CREATE TABLE Clients
               prenom VARCHAR(30) NOT NULL,
               naissance date NOT NULL,
               adresse VARCHAR(300),
-              tel VARCHAR(14), -- TODO RegEx pour postgres https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-POSIX-REGEXP
+              tel VARCHAR(10) CHECK (tel ~ '[[:digit:]]{10}'),
               UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
             );
 
@@ -69,7 +69,8 @@ CREATE TABLE Traitements(
             veto INTEGER NOT NULL,
             animal INTEGER NOT NULL,
             FOREIGN KEY (veto) REFERENCES Veterinaires(id),
-            FOREIGN KEY (animal) REFERENCES Animaux(id)
+            FOREIGN KEY (animal) REFERENCES Animaux(id),
+            UNIQUE(veto, debut, animal)
 );
 
 CREATE TABLE Medicaments(molecule VARCHAR(50) PRIMARY KEY, description VARCHAR(300) NOT NULL);
