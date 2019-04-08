@@ -55,3 +55,27 @@ On a uniquement $`nom`$ comme clé.
 La seule DF est de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
 
 Ainsi, cette table est BNCF et donc est également 3NF.
+
+# Animaux
+## Dépendances fonctionnelles et clés
+$`CM_{Animaux} = \{ id \rightarrow nom; id \rightarrow dernier\_poids; id \rightarrow dernière\_taille; id \rightarrow annee\_naissance; id \rightarrow propriétaire; id \rightarrow espece;\}`$
+
+
+On a uniquement $`id`$ comme clé.
+
+## Preuve
+On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
+
+Ainsi, cette table est BNCF et donc est également 3NF.
+
+# Médicaments
+## Dépendances fonctionnelles et clés
+$`CM_{Médicaments} = \{ molécule \rightarrow description\}`$
+
+
+On a uniquement $`molécule`$ comme clé.
+
+## Preuve
+On a l'unique DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
+
+Ainsi, cette table est BNCF et donc est également 3NF.
