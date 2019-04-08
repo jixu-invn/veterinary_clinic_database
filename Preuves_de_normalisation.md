@@ -1,6 +1,6 @@
 Preuves de normalisation
 ===
-L'enjeu de ce document est de prouver que chaque table sont 3NF. Nous passerons quasi-exclusivement
+L'enjeu de ce document est de prouver que chaque table sont 3NF. Nous passerons exclusivement
 par une preuve de BCNF afin d'avoir des preuves rapides et efficaces.
 
 **Remarque**: on considérera que tous les attributs de chaque table sont atomiques. En tout cas, ils sont
