@@ -79,3 +79,13 @@ On a uniquement $`molécule`$ comme clé.
 On a l'unique DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
 
 Ainsi, cette table est BNCF et donc est également 3NF.
+
+# Médicament\_autorisé
+## Dépendances fonctionnelles et clés
+$`CM_{Médicament\_autorisé} = \{\}`$
+
+
+Ainsi, on a $`(médicament, espèce)`$ comme clé.
+
+## Preuve
+L'ensemble des attributs forme la clé donc la preuve du 3NF est triviale.
