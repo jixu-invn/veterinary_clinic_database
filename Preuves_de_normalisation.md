@@ -89,3 +89,27 @@ Ainsi, on a $`(médicament, espèce)`$ comme clé.
 
 ## Preuve
 L'ensemble des attributs forme la clé donc la preuve du 3NF est triviale.
+
+# Traitements
+## Dépendances fonctionnelles et clés
+$`CM_{Traitements} = \{ véto, début, animal \rightarrow nom; véto, début, animal \rightarrow id; id \rightarrow véto;  id \rightarrow début;  id \rightarrow animal\}`$
+
+
+On a $`(véto, début, animal)`$ et $`id`$ comme clés.
+
+## Preuve
+On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
+
+Ainsi, cette table est BNCF et donc est également 3NF.
+
+# Traitement\_contient
+## Dépendances fonctionnelles et clés
+$`CM_{Traitement\_contient} = \{traitement, médicament \rightarrow fin\}`$
+
+
+On a $`(traitement, médicament)`$ comme unique clé.
+
+## Preuve
+On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
+
+Ainsi, cette table est BNCF et donc est également 3NF.
