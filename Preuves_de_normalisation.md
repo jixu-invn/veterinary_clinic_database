@@ -10,10 +10,10 @@ conçus pour l'être et il faudra que l'applicatif puisse vérifier cela à l'ai
 ## Dépendances fonctionnelles et clés
 $`CM_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
 
-On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés.
+On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs [on pourrait faire la cloture transitive pour le montrer explicitement] et sont minimales).
 
 ## Preuve
-On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
+On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé. 
 
 Ainsi, cette table est BNCF et donc est également 3NF.
 
@@ -23,14 +23,14 @@ On pourrait penser à tort que l'adresse ou le numéro de téléphone détermine
 En effet, le téléphone peut être fixe et donc plusieurs personnes auront le même numéro.
 Un couple (ou des colocataires) aura une adresse commune.
 
-Cette remarque tient pour toutes les tables relatives à des individus.
+Cette remarque tient pour toutes les tables relatives à des individus. 
 
 # Vétérinaires
 ## Dépendances fonctionnelles et clés
 $`CM_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
 
 
-On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés.
+On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
 ## Preuve
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
@@ -42,7 +42,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 $`CM_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel; nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
 
 
-On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés.
+On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
 ## Preuve
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
@@ -57,7 +57,7 @@ La preuve est triviale puisque la table ne contient qu'un attribut. Donc cette t
 $`CM_{Espèces} = \{ nom \rightarrow Classe\}`$
 
 
-On a uniquement $`nom`$ comme clé.
+On a uniquement $`nom`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
 
 ## Preuve
 La seule DF est de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
@@ -69,7 +69,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 $`CM_{Animaux} = \{ id \rightarrow nom; id \rightarrow dernier\_poids; id \rightarrow dernière\_taille; id \rightarrow annee\_naissance; id \rightarrow propriétaire; id \rightarrow espece;\}`$
 
 
-On a uniquement $`id`$ comme clé.
+On a uniquement $`id`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
 
 ## Preuve
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
@@ -86,7 +86,7 @@ Cependant, cela ne changerait aucunement la démonstration.
 $`CM_{Médicaments} = \{ molécule \rightarrow description\}`$
 
 
-On a uniquement $`molécule`$ comme clé.
+On a uniquement $`molécule`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
 
 ## Preuve
 On a l'unique DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
@@ -98,7 +98,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 $`CM_{Médicament\_autorisé} = \{\}`$
 
 
-Ainsi, on a $`(médicament, espèce)`$ comme clé.
+Ainsi, on a $`(médicament, espèce)`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
 
 ## Preuve
 L'ensemble des attributs forme la clé donc la preuve du 3NF est triviale.
@@ -108,7 +108,7 @@ L'ensemble des attributs forme la clé donc la preuve du 3NF est triviale.
 $`CM_{Traitements} = \{ véto, début, animal \rightarrow nom; véto, début, animal \rightarrow id; id \rightarrow véto;  id \rightarrow début;  id \rightarrow animal\}`$
 
 
-On a $`(véto, début, animal)`$ et $`id`$ comme clés.
+On a $`(véto, début, animal)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
 ## Preuve
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
@@ -120,7 +120,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 $`CM_{Traitement\_contient} = \{traitement, médicament \rightarrow fin\}`$
 
 
-On a $`(traitement, médicament)`$ comme unique clé.
+On a $`(traitement, médicament)`$ comme unique clé (détermine bien l'ensemble des attributs et est minimale).
 
 ## Preuve
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
