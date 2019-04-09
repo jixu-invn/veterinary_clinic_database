@@ -74,7 +74,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 
 # Animaux
 ## Dépendances fonctionnelles et clés
-$`CM_{Animaux} = \{ id \rightarrow nom; id \rightarrow dernier\_poids; id \rightarrow dernière\_taille; id \rightarrow annee\_naissance; id \rightarrow propriétaire; id \rightarrow espece;\}`$
+$`CM_{Animaux} = \{ id \rightarrow nom; id \rightarrow dernier\_poids; id \rightarrow dernière\_taille; id \rightarrow annee\_naissance; id \rightarrow propriétaire; id \rightarrow espece;\} = F^+_{Animaux} `$
 
 
 On a uniquement $`id`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
@@ -91,7 +91,7 @@ Cependant, cela ne changerait aucunement la démonstration.
 
 # Médicaments
 ## Dépendances fonctionnelles et clés
-$`CM_{Médicaments} = \{ molécule \rightarrow description\}`$
+$`CM_{Médicaments} = \{ molécule \rightarrow description\} = F^+_{Médicaments}`$
 
 
 On a uniquement $`molécule`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
@@ -115,6 +115,7 @@ L'ensemble des attributs forme la clé donc la preuve du 3NF est triviale.
 ## Dépendances fonctionnelles et clés
 $`CM_{Traitements} = \{ véto, début, animal \rightarrow nom; véto, début, animal \rightarrow id; id \rightarrow véto;  id \rightarrow début;  id \rightarrow animal\}`$
 
+$`F^+_{Traitements} = \{ véto, début, animal \rightarrow nom; véto, début, animal \rightarrow id; id \rightarrow véto;  id \rightarrow début;  id \rightarrow animal; id \rightarrow nom \}`$
 
 On a $`(véto, début, animal)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
