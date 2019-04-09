@@ -17,6 +17,14 @@ On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
 
 Ainsi, cette table est BNCF et donc est également 3NF.
 
+## Remarque
+
+On pourrait penser à tort que l'adresse ou le numéro de téléphone détermine d'autres attributs.
+En effet, le téléphone peut être fixe et donc plusieurs personnes auront le même numéro.
+Un couple (ou des colocataires) aura une adresse commune.
+
+Cette remarque tient pour toutes les tables relatives à des individus.
+
 # Vétérinaires
 ## Dépendances fonctionnelles et clés
 $`CM_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
@@ -68,6 +76,11 @@ On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
 
 Ainsi, cette table est BNCF et donc est également 3NF.
 
+## Remarque
+On pourrait ajouter la DF $`(propriétaire, nom) \rightarrow id`$ et cela ajouterait donc le membre de gauche comme clé (ce qui n'est pas le cas dans notre SQL).
+
+Cependant, cela ne changerait aucunement la démonstration.
+
 # Médicaments
 ## Dépendances fonctionnelles et clés
 $`CM_{Médicaments} = \{ molécule \rightarrow description\}`$
@@ -113,3 +126,7 @@ On a $`(traitement, médicament)`$ comme unique clé.
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé.
 
 Ainsi, cette table est BNCF et donc est également 3NF.
+
+# Conclusion
+Comme nous avons veillé à supprimer toute redondance depuis le début du projet, les démonstrations de normalisation
+sont toutes très simples.
