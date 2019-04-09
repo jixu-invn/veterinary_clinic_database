@@ -6,13 +6,15 @@ par une preuve de BCNF afin d'avoir des preuves rapides et efficaces.
 **Remarque**: on considérera que tous les attributs de chaque table sont atomiques. En tout cas, ils sont
 conçus pour l'être et il faudra que l'applicatif puisse vérifier cela à l'aide d'expressions régulières.
 
-Dans l'ensemble des preuves, **la minimalité des clés** traduit le fait qu'on ne puisse pas enlever un attribut de la clé et toujours déterminer l'ensemble des attributs.
+Dans l'ensemble des preuves, **la minimalité des clés** sera montrée grâce à la couverture minimale et la **dépendance fonctionnelle de l'ensemble des attributs** sera faite grâce à la cloture transitive. 
 
 # Assistants
 ## Dépendances fonctionnelles et clés
 $`CM_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
 
-On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs [on pourrait faire la cloture transitive pour le montrer explicitement] et sont minimales).
+$`F^+_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance; id \rightarrow tel; id \rightarrow adresse; id \rightarrow spé \}`$
+
+On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
 ## Preuve
 On a toutes les DF de la forme $` K \rightarrow A`$ avec $`K`$ une clé. 
@@ -31,6 +33,8 @@ Cette remarque tient pour toutes les tables relatives à des individus.
 ## Dépendances fonctionnelles et clés
 $`CM_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
 
+$`F^+_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance; id \rightarrow tel; id \rightarrow adresse; id \rightarrow spé \}`$
+
 
 On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
@@ -42,6 +46,8 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 # Clients
 ## Dépendances fonctionnelles et clés
 $`CM_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel; nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
+
+$`F^+_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance; id \rightarrow tel; id \rightarrow adresse \}`$
 
 
 On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
@@ -56,7 +62,7 @@ La preuve est triviale puisque la table ne contient qu'un attribut. Donc cette t
 
 # Espèces
 ## Dépendances fonctionnelles et clés
-$`CM_{Espèces} = \{ nom \rightarrow Classe\}`$
+$`CM_{Espèces} = \{ nom \rightarrow Classe\} = F^+_{Espèces}`$
 
 
 On a uniquement $`nom`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
@@ -97,7 +103,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 
 # Médicament\_autorisé
 ## Dépendances fonctionnelles et clés
-$`CM_{Médicament\_autorisé} = \{\}`$
+$`CM_{Médicament\_autorisé} = \{\} = F^+_{Médicament\_autorisé}`$
 
 
 Ainsi, on a $`(médicament, espèce)`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
@@ -119,7 +125,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 
 # Traitement\_contient
 ## Dépendances fonctionnelles et clés
-$`CM_{Traitement\_contient} = \{traitement, médicament \rightarrow fin\}`$
+$`CM_{Traitement\_contient} = \{traitement, médicament \rightarrow fin\} = F^+_{Traitement\_contient}`$
 
 
 On a $`(traitement, médicament)`$ comme unique clé (détermine bien l'ensemble des attributs et est minimale).
