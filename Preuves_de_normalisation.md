@@ -6,6 +6,8 @@ par une preuve de BCNF afin d'avoir des preuves rapides et efficaces.
 **Remarque**: on considérera que tous les attributs de chaque table sont atomiques. En tout cas, ils sont
 conçus pour l'être et il faudra que l'applicatif puisse vérifier cela à l'aide d'expressions régulières.
 
+Dans l'ensemble des preuves, **la minimalité des clés** traduit le fait qu'on ne puisse pas enlever un attribut de la clé et toujours déterminer l'ensemble des attributs.
+
 # Assistants
 ## Dépendances fonctionnelles et clés
 $`CM_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
