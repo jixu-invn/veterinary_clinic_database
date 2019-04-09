@@ -10,9 +10,9 @@ Dans l'ensemble des preuves, **la minimalité des clés** sera déduite grâce �
 
 # Assistants
 ## Dépendances fonctionnelles et clés
-$`CM_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
+$`CM_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;~  nom,prénom,naissance \rightarrow tel;~  nom,prénom,naissance \rightarrow spé;~  nom,prénom,naissance \rightarrow id;~ id \rightarrow nom;~ id \rightarrow prénom;~ id \rightarrow naissance \}`$
 
-$`F^+_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance; id \rightarrow tel; id \rightarrow adresse; id \rightarrow spé \}`$
+$`F^+_{Assistants} = \{ nom,prénom,naissance \rightarrow adresse;~  nom,prénom,naissance \rightarrow tel;~  nom,prénom,naissance \rightarrow spé;~  nom,prénom,naissance \rightarrow id;~ id \rightarrow nom;~ id \rightarrow prénom;~ id \rightarrow naissance;~ id \rightarrow tel;~ id \rightarrow adresse;~ id \rightarrow spé \}`$
 
 On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
@@ -31,9 +31,9 @@ Cette remarque tient pour toutes les tables relatives à des individus.
 
 # Vétérinaires
 ## Dépendances fonctionnelles et clés
-$`CM_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
+$`CM_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;~  nom,prénom,naissance \rightarrow tel;~  nom,prénom,naissance \rightarrow spé;~  nom,prénom,naissance \rightarrow id;~ id \rightarrow nom;~ id \rightarrow prénom;~ id \rightarrow naissance \}`$
 
-$`F^+_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow spé;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance; id \rightarrow tel; id \rightarrow adresse; id \rightarrow spé \}`$
+$`F^+_{Vétérinaires} = \{ nom,prénom,naissance \rightarrow adresse;~  nom,prénom,naissance \rightarrow tel;~  nom,prénom,naissance \rightarrow spé;~  nom,prénom,naissance \rightarrow id;~ id \rightarrow nom;~ id \rightarrow prénom;~ id \rightarrow naissance;~ id \rightarrow tel;~ id \rightarrow adresse;~ id \rightarrow spé \}`$
 
 
 On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
@@ -45,9 +45,9 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 
 # Clients
 ## Dépendances fonctionnelles et clés
-$`CM_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel; nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance \}`$
+$`CM_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;~  nom,prénom,naissance \rightarrow tel;~ nom,prénom,naissance \rightarrow id;~ id \rightarrow nom;~ id \rightarrow prénom;~ id \rightarrow naissance \}`$
 
-$`F^+_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;  nom,prénom,naissance \rightarrow tel;  nom,prénom,naissance \rightarrow id; id \rightarrow nom; id \rightarrow prénom; id \rightarrow naissance; id \rightarrow tel; id \rightarrow adresse \}`$
+$`F^+_{Clients} = \{ nom,prénom,naissance \rightarrow adresse;~  nom,prénom,naissance \rightarrow tel;~  nom,prénom,naissance \rightarrow id;~ id \rightarrow nom;~ id \rightarrow prénom;~ id \rightarrow naissance;~ id \rightarrow tel;~ id \rightarrow adresse \}`$
 
 
 On a $`(nom,prénom,naissance)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
@@ -74,7 +74,7 @@ Ainsi, cette table est BNCF et donc est également 3NF.
 
 # Animaux
 ## Dépendances fonctionnelles et clés
-$`CM_{Animaux} = \{ id \rightarrow nom; id \rightarrow dernier\_poids; id \rightarrow dernière\_taille; id \rightarrow annee\_naissance; id \rightarrow propriétaire; id \rightarrow espece;\} = F^+_{Animaux} `$
+$`CM_{Animaux} = \{ id \rightarrow nom;~ id \rightarrow dernier\_poids;~ id \rightarrow dernière\_taille;~ id \rightarrow annee\_naissance;~ id \rightarrow propriétaire;~ id \rightarrow espece;~\} = F^+_{Animaux} `$
 
 
 On a uniquement $`id`$ comme clé (détermine bien l'ensemble des attributs et est minimale).
@@ -113,9 +113,9 @@ L'ensemble des attributs forme la clé donc la preuve du 3NF est triviale.
 
 # Traitements
 ## Dépendances fonctionnelles et clés
-$`CM_{Traitements} = \{ véto, début, animal \rightarrow nom; véto, début, animal \rightarrow id; id \rightarrow véto;  id \rightarrow début;  id \rightarrow animal\}`$
+$`CM_{Traitements} = \{ véto, début, animal \rightarrow nom;~ véto, début, animal \rightarrow id;~ id \rightarrow véto;~  id \rightarrow début;~  id \rightarrow animal\}`$
 
-$`F^+_{Traitements} = \{ véto, début, animal \rightarrow nom; véto, début, animal \rightarrow id; id \rightarrow véto;  id \rightarrow début;  id \rightarrow animal; id \rightarrow nom \}`$
+$`F^+_{Traitements} = \{ véto, début, animal \rightarrow nom;~ véto, début, animal \rightarrow id;~ id \rightarrow véto;~  id \rightarrow début;~  id \rightarrow animal;~ id \rightarrow nom \}`$
 
 On a $`(véto, début, animal)`$ et $`id`$ comme clés (déterminent bien l'ensemble des attributs et sont minimales).
 
