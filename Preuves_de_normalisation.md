@@ -6,7 +6,7 @@ par une preuve de BCNF afin d'avoir des preuves rapides et efficaces.
 **Remarque**: on considérera que tous les attributs de chaque table sont atomiques. En tout cas, ils sont
 conçus pour l'être et il faudra que l'applicatif puisse vérifier cela à l'aide d'expressions régulières.
 
-Dans l'ensemble des preuves, **la minimalité des clés** sera montrée grâce à la couverture minimale et la **dépendance fonctionnelle de l'ensemble des attributs** sera faite grâce à la cloture transitive. 
+Dans l'ensemble des preuves, **la minimalité des clés** sera déduite grâce à la couverture minimale et la **dépendance fonctionnelle de l'ensemble des attributs** sera déduite grâce à la cloture transitive. 
 
 # Assistants
 ## Dépendances fonctionnelles et clés
