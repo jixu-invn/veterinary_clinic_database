@@ -19,12 +19,9 @@ CREATE VIEW Statistiques_globales_medicaments AS
 SELECT * FROM Statistiques_globales_medicaments S WHERE S.medicament = 'rinoxolone'; --on récupère ici les statistiques pour UNE molécule donnée
 
 
-CREATE VIEW Stat_animal_donne AS
 SELECT U.molecule, SUM((U.fin-U.debut+1)*U.quantite_journaliere) Quantite_totale_prescrite FROM
 (SELECT debut,fin,quantite_journaliere, T.id Traitement, M.molecule, A.id Animal
 FROM Traitements T, Animaux A, Traitement_contient C, Medicaments M
 WHERE T.animal=A.id AND T.id=C.traitement AND M.molecule=C.medicament
-AND A.id = 2) U -- Une vue par animal
+AND A.id = 2) U -- On choisit l'animal
 GROUP BY U.molecule;
-
-SELECT * FROM stats_animal_donne WHERE molecule='crisaline'; --on récupère pour un médicament précis
