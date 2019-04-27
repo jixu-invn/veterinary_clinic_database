@@ -32,7 +32,7 @@ GROUP BY U.molecule;
 -----REQUETES BONUS----
 -- Nombre d'animaux traités par chaque médecin --
 SELECT V.nom, V.prenom, V.naissance, COUNT(DISTINCT T.animal) AS Nb_animaux_traites
-    FROM Vingtenaires V JOIN Traitements T ON V.id=T.veto
+    FROM Veterinaires V JOIN Traitements T ON V.id=T.veto
     GROUP BY V.nom, V.prenom, V.naissance;
     
 -- Nombre de vétérinaires chez lesquels un client a déjà consulté
