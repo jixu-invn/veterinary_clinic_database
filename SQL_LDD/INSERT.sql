@@ -54,7 +54,14 @@ INSERT INTO Medicament_autorise VALUES ('stomatose','perruche');
 INSERT INTO Medicament_autorise VALUES ('stomatose','crocodile'); --on a bien une relation N:M
 
 
+/* ajout de valeurs pour prouver le bon fonctionnement des vues et requetes
+INSERT INTO Animaux VALUES ('5','Joyce','4.3','0.37','2008','1','chien');
+    statistiques animaux: changement des moyennes
 
+INSERT INTO Traitements VALUES ('5','traitement oeil','2015-08-04','2','5');
+INSERT INTO Traitement_contient VALUES ('5','crisaline','2015-08-30','50');
+    statistiques globales medicaments: changement de la valeur totale
+    la requete "type de medicament prescrit pour un animal" fonctionne aussi */
 
 
 
