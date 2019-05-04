@@ -1,0 +1,73 @@
+@startuml
+hide circle
+
+abstract class Individu {
+  Nom : string
+  Prénom : string
+  Date de naissance : Date
+  Adresse : string
+  Téléphone : string {Respecte l'expression régulière relative aux numéros de téléphone}
+  (Nom,Prénom,Date de naissance) key
+}
+
+class Client {
+}
+
+
+class Classe_espèces_animales{
+  nom : string {key}
+}
+
+class Animal{
+  Nom : string
+  Dernier poids mesuré : float {Peut-être manquant; poids >0}
+  Dernière taille mesurée : float {Peut-être manquant; taille >0}
+  Année : int {Peut-être manquant; année > 1800}
+  
+  maj_poids()
+  maj_taille()
+}
+
+class Espèce{
+  nom : string{key}
+}
+
+class Médicament{
+  molécule : string {key}
+  description : string
+}
+
+
+class Traitement{
+  nom : string
+  debut: date
+}
+
+Individu <|-- Client
+
+
+
+Espèce "*" -- "1" Classe_espèces_animales: appartient à >
+Animal "*" -- "1" Espèce: appartient à >
+Client "1" -- "1..*" Animal : possède >
+
+Médicament "*" -- "1..*" Espèce : est autorisé pour >
+
+Traitement "*" -- "1" Animal : est prescit à >
+Traitement "*" -- "1..*" Médicament
+
+
+
+note "Tous les héritages sont exclusifs" as N1
+note "On considère qu'une espèce n'appartient qu'à une seule classe d'espèces (cela pourra être modifié si notre client le souhaite)" as N3
+note "taille en m" as N4
+note "poids en kg" as N5
+note "Le poids et la taille peuvent être nuls\n car on considère qu'un animal\n peut-être rentré dans le système\n avant sa première mesure" as N7
+note "CONTRAINTE : Un médicament doit être prescrit à un animal\nd'une espèce autorisée à être traitée avec ce médicament" as N8
+
+Médicament .. N8
+Animal .. N7
+Animal .. N4
+Animal .. N5
+Classe_espèces_animales .. N3
+@enduml
