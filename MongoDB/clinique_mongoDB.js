@@ -72,6 +72,78 @@ db.Clinique.insert(
 					]
 				}
 			]
+		},
+		{
+			"nom":"Ketchum",
+			"prenom":"Sasha",
+			"date_naissance":"1998-01-01",
+			"adresse":"Bourg-palette",
+			"telephone":0666666666,
+			"animaux":[
+				{
+					"nom":"pikachu",
+					"dernier_poids_mesure":"25",
+					"derniere_taille_mesure":"50",
+					"annee":2008,
+					"espece":{
+							"nom":"souris",
+							"classe_especes_animales":"mammifere",
+							"medicaments_autorisés":[
+								{
+									"molecule":"pokesoin"
+								}
+							]
+					}
+					"traitement":[
+						{
+							"nom":"potion de soin",
+							"debut_date":"207-05-07"
+							"medicaments":[
+								{
+									"molecule":"pokesoin",
+									"description":"soigne des blessures"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"nom":"Snow",
+			"prenom":"John",
+			"date_naissance":"1302-07-12",
+			"adresse":"winterfell",
+			"telephone":0687614637,
+			"animaux":[
+				{
+					"nom":"Ghoste",
+					"dernier_poids_mesure":"200",
+					"derniere_taille_mesure":"1.50",
+					"annee":1315,
+					"espece":{
+							"nom":"Loup",
+							"classe_especes_animales":"mammifere",
+							"medicaments_autorisés":[
+								{
+									"molecule":"nexgard"
+								}
+							]
+					}
+					"traitement":[
+						{
+							"nom":"nexgard",
+							"debut_date":"1320-06-08"
+							"medicaments":[
+								{
+									"molecule":"nexgard",
+									"description":"protege les dents"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 		
 	]
