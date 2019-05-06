@@ -1,9 +1,0 @@
-Notes MongoDB
-
-classes représentées: client, animal, espèce, classe_espèces_animales, médicament, traitement
-la clinique à comme clientèle plusieurs clients.
-Ils ont leurs attributs d'individus et possèdent plusieurs animaux.
-Ces animaux ont leurs attribus, une espèce (avec ses médicaments autorisés),
-ils peuvent avoir plusieurs traitements qui peuvent comporter plusieurs médicaments (redondance avec médicaments autorisés?)
-
-Fichier n'a pas encore été testé sur mongodb
