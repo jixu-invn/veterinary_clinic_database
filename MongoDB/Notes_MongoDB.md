@@ -13,6 +13,12 @@ Les animaux ont un nom, un poids, une taille, une espèce, une année de naissan
 Les traitements sont nommés et liés à un unique animal. Le traitement a un début et contient des médicaments ayant
 chacun leur date de fin de traitement et leur dose journalière.
 
+## Les id
+On a défini des id à la main pour les collections clients et animaux car nous avions besoin de ses idées pour faire des références.
+On fait référence aux clients en tant que propriétaires dans la collection animaux. Et on fait référence aux animaux dans la collection
+traitements. On laisse mongo définir un id pour les documents de la collection traitements car nous n'avons pas besoin de ceux-ci sachant 
+qu'il n'y a pas de classe annexe faisant des références vers les traitements.
+
 # Ce que le NoSQL nous a fait perdre
 On a perdu évidemment le contrôle de la cohérence et des contraintes. Comme nous n'avons pas de schéma, nous ne pouvons 
 avoir des contraintes. Il n'y a plus de clés, il n'y a plus d'arités contraintes. 
