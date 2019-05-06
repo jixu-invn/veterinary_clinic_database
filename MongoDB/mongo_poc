@@ -1,138 +1,141 @@
 use clinique_projet_nf17
 db.dropDatabase()
 use clinique_projet_nf17
+
 db.clients.insert([
-  {
-    _id: ObjectId("000000000000000000000001"),
-    nom:"Jugnot",
-    prenom:"Gerard",
-    naissance:"1955-12-04",
-    adresse:"255 avenue foch, Paris",
-    tel:"0745869621"
-  },
-  {
-    _id: ObjectId("000000000000000000000002"),
-    nom:"Belmondo",
-    prenom:"Jean-Paul",
-    naissance:"1964-09-10",
-    adresse:"1024 boulevard de la vilette, Niors",
-    tel:"0515487959"
-  },
-  {
-    _id: ObjectId("000000000000000000000003"),
-    nom:"Cotillard",
-    prenom:"Marion",
-    naissance:"1985-04-12",
-    adresse:"41 rue de neuilly, Nanterre",
-    tel:"0256368596"
-  },
-  {
-    _id: ObjectId("000000000000000000000004"),
-    nom:"Bellucci",
-    prenom:"Monica",
-    naissance:"1976-01-22",
-    adresse:"	85 rue Chantilly, Marseille",
-    tel:"	0485963214"
-  }
+        {
+        _id: ObjectId("000000000000000000000001"),
+        nom:"Jugnot",
+        prenom:"Gerard",
+        naissance:"1955-12-04",
+        adresse:"255 avenue foch, Paris",
+        tel:"0745869621"
+        },
+        {
+        _id: ObjectId("000000000000000000000002"),
+        nom:"Belmondo",
+        prenom:"Jean-Paul",
+        naissance:"1964-09-10",
+        adresse:"1024 boulevard de la vilette, Niors",
+        tel:"0515487959"
+        },
+        {
+        _id: ObjectId("000000000000000000000003"),
+        nom:"Cotillard",
+        prenom:"Marion",
+        naissance:"1985-04-12",
+        adresse:"41 rue de neuilly, Nanterre",
+        tel:"0256368596"
+        },
+        {
+        _id: ObjectId("000000000000000000000004"),
+        nom:"Bellucci",
+        prenom:"Monica",
+        naissance:"1976-01-22",
+        adresse:"	85 rue Chantilly, Marseille",
+        tel:"	0485963214"
+        }
   ])
 
 db.animaux.insert([
-  {
-    _id: ObjectId("000000000000000000000001"),
-    nom: "Griffon",
-    dernier_poids: NumberDecimal("25.3"),
-    derniere_taille: NumberDecimal("1.05"),
-    annee_naissance: NumberInt(2012),
-    espece:"chien",
-    proprietaire: ObjectId("000000000000000000000001")
-  },
-  {
-    _id: ObjectId("000000000000000000000002"),
-    nom: "Manu",
-    dernier_poids: NumberDecimal("18.3"),
-    derniere_taille: NumberDecimal("3.05"),
-    annee_naissance: NumberInt(2008),
-    espece:"crocodile",
-    proprietaire: ObjectId("000000000000000000000002")
-  },
-  {
-    _id: ObjectId("000000000000000000000003"),
-    nom: "Cerise",
-    dernier_poids: NumberDecimal("50.3"),
-    derniere_taille: NumberDecimal("1.5"),
-    annee_naissance: NumberInt(2006),
-    espece:"ours",
-    proprietaire: ObjectId("000000000000000000000002")
-  },
-  {
-    _id: ObjectId("000000000000000000000004"),
-    nom: "Pierre",
-    dernier_poids: NumberDecimal("0.45"),
-    derniere_taille: NumberDecimal("0.14"),
-    annee_naissance: NumberInt(2015),
-    espece:"perruche",
-    proprietaire: ObjectId("000000000000000000000003")
-  }
+        {
+        _id: ObjectId("000000000000000000000001"),
+        nom: "Griffon",
+        dernier_poids: NumberDecimal("25.3"),
+        derniere_taille: NumberDecimal("1.05"),
+        annee_naissance: NumberInt(2012),
+        espece:"chien",
+        proprietaire: ObjectId("000000000000000000000001")
+        },
+        {
+        _id: ObjectId("000000000000000000000002"),
+        nom: "Manu",
+        dernier_poids: NumberDecimal("18.3"),
+        derniere_taille: NumberDecimal("3.05"),
+        annee_naissance: NumberInt(2008),
+        espece:"crocodile",
+        proprietaire: ObjectId("000000000000000000000002")
+        },
+        {
+        _id: ObjectId("000000000000000000000003"),
+        nom: "Cerise",
+        dernier_poids: NumberDecimal("50.3"),
+        derniere_taille: NumberDecimal("1.5"),
+        annee_naissance: NumberInt(2006),
+        espece:"ours",
+        proprietaire: ObjectId("000000000000000000000002")
+        },
+        {
+        _id: ObjectId("000000000000000000000004"),
+        nom: "Pierre",
+        dernier_poids: NumberDecimal("0.45"),
+        derniere_taille: NumberDecimal("0.14"),
+        annee_naissance: NumberInt(2015),
+        espece:"perruche",
+        proprietaire: ObjectId("000000000000000000000003")
+        }
   ])
 
 db.classes.insert([
-  {
-    nom : "mammifere",
-    especes:["chien", "dauphin"]
-  },
-  {
-    nom : "oiseaux",
-    especes:["poule", "perruche"]
-  },
-  {
-    nom : "reptile",
-    especes:["crocodile"]
-  },
-  {
-    nom : "poisson",
-    especes:["truite"]
-  }
+        {
+        nom : "mammifere",
+        especes:["chien", "dauphin"]
+        },
+        {
+        nom : "oiseaux",
+        especes:["poule", "perruche"]
+        },
+        {
+        nom : "reptile",
+        especes:["crocodile"]
+        },
+        {
+        nom : "poisson",
+        especes:["truite"]
+        }
   ])
 
 db.traitements.insert([
-  {
-    nom:"traitement foie",
-    debut:"2015-06-06",
-    animal: ObjectId("000000000000000000000001"),
-    contient: [
-      {medoc: "rinoxolone", fin: "2015-08-06", quantite_journaliere: NumberInt(15)}
-    ]
-  },
-  {
-    nom:"traitement oeil",
-    debut:"2015-06-07",
-    animal: ObjectId("000000000000000000000002"),
-    contient: [
-      {medoc: "crisaline", fin: "2015-07-06", quantite_journaliere: NumberInt(40)}
-    ]
-  },
-  {
-    nom:"traitement bronchie",
-    debut:"2015-06-08",
-    animal: ObjectId("000000000000000000000003"),
-    contient: [
-      {medoc: "bronchioture", fin: "2015-06-18", quantite_journaliere: NumberInt(10)}
-    ]
-  },
-  {
-    nom:"traitement estomac",
-    debut:"2015-06-09",
-    animal: ObjectId("000000000000000000000004"),
-    contient: [
-      {medoc: "stomatose", fin: "2015-06-29", quantite_journaliere: NumberInt(5)}
-    ]
-  },
-  {
-    nom:"traitement oeil",
-    debut:"2015-08-04",
-    animal: ObjectId("000000000000000000000002"),
-    contient: [
-      {medoc: "crisaline", fin: "2015-08-30", quantite_journaliere: NumberInt(50)}
-    ]
-  }
+        {
+        nom:"traitement foie",
+        debut:"2015-06-06",
+        animal: ObjectId("000000000000000000000001"),
+        contient: [
+          {medoc: "rinoxolone", fin: "2015-08-06", quantite_journaliere: NumberInt(15)}
+        ]
+        },
+        {
+        nom:"traitement oeil",
+        debut:"2015-06-07",
+        animal: ObjectId("000000000000000000000002"),
+        contient: [
+          {medoc: "crisaline", fin: "2015-07-06", quantite_journaliere: NumberInt(40)}
+        ]
+        },
+        {
+        nom:"traitement bronchie",
+        debut:"2015-06-08",
+        animal: ObjectId("000000000000000000000003"),
+        contient: [
+          {medoc: "bronchioture", fin: "2015-06-18", quantite_journaliere: NumberInt(10)}
+        ]
+        },
+        {
+        nom:"traitement estomac",
+        debut:"2015-06-09",
+        animal: ObjectId("000000000000000000000004"),
+        contient: [
+          {medoc: "stomatose", fin: "2015-06-29", quantite_journaliere: NumberInt(5)}
+        ]
+        },
+        {
+        nom:"traitement oeil",
+        debut:"2015-08-04",
+        animal: ObjectId("000000000000000000000002"),
+        contient: [
+          {medoc: "crisaline", fin: "2015-08-30", quantite_journaliere: NumberInt(50)}
+        ]
+        }
   ])
+
+db.traitements.find({"contient.medoc":"crisaline"})
