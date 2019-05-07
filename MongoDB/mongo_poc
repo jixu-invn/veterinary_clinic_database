@@ -4,7 +4,6 @@ use clinique_projet_nf17
 
 db.clients.insert([
         {
-        _id: ObjectId("C00000000000000000000001"),
         nom:"Jugnot",
         prenom:"Gerard",
         naissance:"1955-12-04",
@@ -12,7 +11,6 @@ db.clients.insert([
         tel:"0745869621"
         },
         {
-        _id: ObjectId("C00000000000000000000002"),
         nom:"Belmondo",
         prenom:"Jean-Paul",
         naissance:"1964-09-10",
@@ -20,7 +18,6 @@ db.clients.insert([
         tel:"0515487959"
         },
         {
-        _id: ObjectId("C00000000000000000000003"),
         nom:"Cotillard",
         prenom:"Marion",
         naissance:"1985-04-12",
@@ -28,7 +25,6 @@ db.clients.insert([
         tel:"0256368596"
         },
         {
-        _id: ObjectId("C00000000000000000000004"),
         nom:"Bellucci",
         prenom:"Monica",
         naissance:"1976-01-22",
@@ -45,7 +41,8 @@ db.animaux.insert([
         derniere_taille: NumberDecimal("1.05"),
         annee_naissance: NumberInt(2012),
         espece:"chien",
-        proprietaire: {nom:"Jugnot", prenom:"Gerard",naissance:"1955-12-04"},
+        proprietaire: {nom:"Jugnot", prenom:"Gerard",naissance:"1955-12-04"}
+        },
         {
         _id: ObjectId("A00000000000000000000002"),
         nom: "Manu",
