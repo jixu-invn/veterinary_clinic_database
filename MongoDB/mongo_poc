@@ -32,8 +32,8 @@ db.clients.insert([
         nom:"Bellucci",
         prenom:"Monica",
         naissance:"1976-01-22",
-        adresse:"	85 rue Chantilly, Marseille",
-        tel:"	0485963214"
+        adresse:"85 rue Chantilly, Marseille",
+        tel:"0485963214"
         }
   ])
 
