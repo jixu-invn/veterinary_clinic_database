@@ -14,16 +14,16 @@ Les traitements sont nommés et liés à un unique animal. Le traitement a un d�
 chacun leur date de fin de traitement et leur dose journalière.
 
 ## Les id
-On a défini des id à la main pour les collections clients et animaux car nous avions besoin de ses id pour faire des références. A l'instar de l'exo _Au ciné avec Mongo II_, on a fait
-ce choix car il n'existait pas de clé naturelle mis à part le combo (Nom, Prénom, Naissance) mais celui-ci allourdit les manipulations et les jointures sont
-déjà assez compliquées.
+On a défini des id à la main pour la collection animaux car nous avions besoin de ses id pour faire des références. A l'instar de l'exo _Au ciné avec Mongo II_, on a fait
+ce choix car il n'existait pas de clé naturelle. En revanche, on utilise la clé naturelle (nom,prenom,naissance) pour faire référence aux éléments de la collection clients.
+Cela permet également d'effectuer des requêtes intéressantes telles que : `db.animaux.find({"proprietaire.nom":"Belmondo"})`
 
 On fait référence aux clients en tant que propriétaires dans la collection animaux. Et on fait référence aux animaux dans la collection
-traitements. On laisse mongo définir un id pour les documents de la collection traitements car nous n'avons pas besoin de ceux-ci sachant 
-qu'il n'y a pas de classe annexe faisant des références vers les traitements.
+traitements. On laisse mongo définir un id pour les documents des collection traitements et clients car nous n'avons pas besoin de ceux-ci(soit on ne fait jamais de références
+vers les documents de la collection soit il existe déjà une clé naturelle).
 
 Notons que selon les demandes du client on pourrait ajouter des informations et **créer de la redondance**. Par exemple, si on souhaite accéder rapidement au numéro de téléphone du prorpiétaire 
-d'un animal, on pourrait ajouter le numéro de téléphone en plus de l'id lors de la référence. Cette donnée ne servira pas à effectuer des jointures mais bien à accélérer une 
+d'un animal, on pourrait ajouter le numéro de téléphone en plus de la clé naturelle lors de la référence. Cette donnée ne servira pas à effectuer des jointures mais bien à accélérer une 
 requête précise. Nous n'avons pas créé de redondance particulière faute de demande précise du client.
 
 # Ce que le NoSQL nous a fait perdre
