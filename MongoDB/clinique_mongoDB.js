@@ -1,41 +1,11 @@
-db.Clinique.insert(
+//Clients
 {
-	"client":[
 		{
 			"nom":"Jugnot",
 			"prenom":"Gerard",
 			"date_naissance":"1955-12-04",
 			"adresse":"255 avenue foch, Paris",
 			"telephone":0745869621,
-			"animaux":[
-				{
-					"nom":"Griffon",
-					"dernier_poids_mesure":"25.3",
-					"derniere_taille_mesure":"1.058",
-					"annee":2012,
-					"espece":{
-							"nom":"chien",
-							"classe_especes_animales":"mammifere",
-							"medicaments_autorisés":[
-								{
-									"molecule":"rinoxolone"
-								}
-							]
-					}
-					"traitement":[
-						{
-							"nom":"traitement foie",
-							"debut_date":"2015-06-06"
-							"medicaments":[
-								{
-									"molecule":"rinoxolone",
-									"description":"debloque le foie"
-								}
-							]
-						}
-					]
-				}
-			]
 		},
 		{
 			"nom":"Cotillard",
@@ -43,35 +13,6 @@ db.Clinique.insert(
 			"date_naissance":"1985-04-12",
 			"adresse":"41 rue de neuilly, Nanterre",
 			"telephone":0256368596,
-			"animaux":[
-				{
-					"nom":"Myrtille",
-					"dernier_poids_mesure":"2.4",
-					"derniere_taille_mesure":".268",
-					"annee":2014,
-					"espece":{
-							"nom":"truite",
-							"classe_especes_animales":"poisson",
-							"medicaments_autorisés":[
-								{
-									"molecule":"bronchioture"
-								}
-							]
-					}
-					"traitement":[
-						{
-							"nom":"traitement bronchie",
-							"debut_date":"2015-06-08"
-							"medicaments":[
-								{
-									"molecule":"bronchioture",
-									"description":"nettoie les bronchies"
-								}
-							]
-						}
-					]
-				}
-			]
 		},
 		{
 			"nom":"Ketchum",
@@ -79,35 +20,6 @@ db.Clinique.insert(
 			"date_naissance":"1998-01-01",
 			"adresse":"Bourg-palette",
 			"telephone":0666666666,
-			"animaux":[
-				{
-					"nom":"pikachu",
-					"dernier_poids_mesure":"25",
-					"derniere_taille_mesure":"50",
-					"annee":2008,
-					"espece":{
-							"nom":"souris",
-							"classe_especes_animales":"mammifere",
-							"medicaments_autorisés":[
-								{
-									"molecule":"pokesoin"
-								}
-							]
-					}
-					"traitement":[
-						{
-							"nom":"potion de soin",
-							"debut_date":"207-05-07"
-							"medicaments":[
-								{
-									"molecule":"pokesoin",
-									"description":"soigne des blessures"
-								}
-							]
-						}
-					]
-				}
-			]
 		},
 		{
 			"nom":"Snow",
@@ -115,37 +27,119 @@ db.Clinique.insert(
 			"date_naissance":"1302-07-12",
 			"adresse":"winterfell",
 			"telephone":0687614637,
-			"animaux":[
-				{
-					"nom":"Ghoste",
-					"dernier_poids_mesure":"200",
-					"derniere_taille_mesure":"1.50",
-					"annee":1315,
-					"espece":{
-							"nom":"Loup",
-							"classe_especes_animales":"mammifere",
-							"medicaments_autorisés":[
-								{
-									"molecule":"nexgard"
-								}
-							]
-					}
-					"traitement":[
-						{
-							"nom":"nexgard",
-							"debut_date":"1320-06-08"
-							"medicaments":[
-								{
-									"molecule":"nexgard",
-									"description":"protege les dents"
-								}
-							]
-						}
-					]
-				}
-			]
 		}
 		
 	]
 }
 )
+
+//Animaux
+{
+    {
+        "nom" : "Griffon",
+        "dernier_poids" : "25.3",
+        "derniere_tailleé : "1.05",
+        "annee_naissance" : "2012",
+        "espece" : "chien",
+        "proprietaire" : "Gerard Jugnot"
+    },
+    {
+        "nom" : "Manu",
+        "dernier_poids" : "18.3",
+        "derniere_tailleé : "3.05",
+        "annee_naissance" : "2008",
+        "espece" : "crocodile",
+        "proprietaire" : "Jean-paul Belmondo"
+    },
+    {
+        "nom" : "Cerise",
+        "dernier_poids" : "50.3",
+        "derniere_tailleé : "1.5",
+        "annee_naissance" : "2006",
+        "espece" : "ours",
+        "proprietaire" : "Mario Cotilalrd"
+    },
+    {
+        "nom" : "Pierre",
+        "dernier_poids" : "0.45",
+        "derniere_tailleé : "0.14",
+        "annee_naissance" : "2015",
+        "espece" : "perruche",
+        "proprietaire" : "Monica Bellucci"
+    }
+}
+
+//Classes
+{
+    {
+        "nom" : "mammifere",
+        "especes" : ["chien", "dauphin"]
+    },
+    {
+        "nom" : "oiseaux",
+        "especes" : ["poule", "perruche"]
+    },
+    {
+        "nom" : "reptile",
+        "especes" : ["crocodile"]
+    },
+    {
+        "nom" : "poisson",
+        "especes" : ["truite"]
+    }
+}
+
+//traitements
+{
+    {
+        "nom" : "traitement foie",
+        "debut" : "2015-06-06",
+        "animal" : "Griffon",
+        "contient" : {
+            "medoc" : "crisaline",
+            "fin" : "2015-07-06",
+            "quantite_journaliere" : "40"
+        }
+    },
+    {
+        "nom" : "traitement foie",
+        "debut" : "2015-06-06",
+        "animal" : "Griffon",
+        "contient" : {
+            "medoc" : "crisaline",
+            "fin" : "2015-07-06",
+            "quantite_journaliere" : "40"
+        }
+    },
+    {
+        "nom" : "traitement foie",
+        "debut" : "2015-06-06",
+        "animal" : "Griffon",
+        "contient" : {
+            "medoc" : "crisaline",
+            "fin" : "2015-07-06",
+            "quantite_journaliere" : "40"
+        }
+    },
+    {
+        "nom" : "traitement foie",
+        "debut" : "2015-06-06",
+        "animal" : "Griffon",
+        "contient" : {
+            "medoc" : "crisaline",
+            "fin" : "2015-07-06",
+            "quantite_journaliere" : "40"
+        }
+    },
+    {
+        "nom" : "traitement foie",
+        "debut" : "2015-06-06",
+        "animal" : "Griffon",
+        "contient" : {
+            "medoc" : "crisaline",
+            "fin" : "2015-07-06",
+            "quantite_journaliere" : "40"
+        }
+    },
+}
+            
