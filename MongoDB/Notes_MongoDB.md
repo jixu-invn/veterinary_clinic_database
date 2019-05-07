@@ -24,13 +24,13 @@ qu'il n'y a pas de classe annexe faisant des références vers les traitements.
 
 Notons que selon les demandes du client on pourrait ajouter des informations et **créer de la redondance**. Par exemple, si on souhaite accéder rapidement au numéro de téléphone du prorpiétaire 
 d'un animal, on pourrait ajouter le numéro de téléphone en plus de l'id lors de la référence. Cette donnée ne servira pas à effectuer des jointures mais bien à accélérer une 
-requête précise. Nous n'avons pas créer de redondance particulière faute de demande précise du client.
+requête précise. Nous n'avons pas créé de redondance particulière faute de demande précise du client.
 
 # Ce que le NoSQL nous a fait perdre
-On a perdu évidemment le contrôle de la cohérence et des contraintes. Comme nous n'avons pas de schéma, nous ne pouvons 
-avoir des contraintes. Il n'y a plus de clés (autre que l'ObjectID), il n'y a plus d'arités contraintes. 
+On a évidemment perdu le contrôle de la cohérence et des contraintes. Comme nous n'avons pas de schéma, nous ne pouvons 
+avoir de contraintes. Il n'y a plus de clés (autre que l'ObjectID), il n'y a plus d'arités contraintes. 
 De plus, certaines opérations, telles que les jointures entre animaux et clients afin d'obtenir les animaux d'un client,
-seront compliqués à effectuer car les SGBD documentaires n'envisagent pas le concept de jointure.
+seront compliquées à effectuer car les SGBD documentaires n'envisagent pas le concept de jointure.
 Il faudra utiliser du javascript afin de produire ce type d'information.
 
 # Ce qu'on gagne
