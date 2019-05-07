@@ -22,7 +22,7 @@ On fait référence aux clients en tant que propriétaires dans la collection an
 traitements. On laisse mongo définir un id pour les documents des collection traitements et clients car nous n'avons pas besoin de ceux-ci(soit on ne fait jamais de références
 vers les documents de la collection soit il existe déjà une clé naturelle).
 
-Notons que selon les demandes du client on pourrait ajouter des informations et **créer de la redondance**. Par exemple, si on souhaite accéder rapidement au numéro de téléphone du prorpiétaire 
+Notons que selon les demandes du client on pourrait ajouter des informations et **créer de la redondance**. Par exemple, si on souhaite accéder rapidement au numéro de téléphone du propriétaire 
 d'un animal, on pourrait ajouter le numéro de téléphone en plus de la clé naturelle lors de la référence. Cette donnée ne servira pas à effectuer des jointures mais bien à accélérer une 
 requête précise. Nous n'avons pas créé de redondance particulière faute de demande précise du client.
 
