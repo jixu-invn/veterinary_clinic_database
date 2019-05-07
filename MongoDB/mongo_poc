@@ -45,8 +45,7 @@ db.animaux.insert([
         derniere_taille: NumberDecimal("1.05"),
         annee_naissance: NumberInt(2012),
         espece:"chien",
-        proprietaire: ObjectId("C00000000000000000000001")
-        },
+        proprietaire: {nom:"Jugnot", prenom:"Gerard",naissance:"1955-12-04"},
         {
         _id: ObjectId("A00000000000000000000002"),
         nom: "Manu",
@@ -54,7 +53,7 @@ db.animaux.insert([
         derniere_taille: NumberDecimal("3.05"),
         annee_naissance: NumberInt(2008),
         espece:"crocodile",
-        proprietaire: ObjectId("C00000000000000000000002")
+        proprietaire: {nom:"Belmondo", prenom:"Jean-Paul", naissance:"1964-09-10"}
         },
         {
         _id: ObjectId("A00000000000000000000003"),
@@ -63,7 +62,7 @@ db.animaux.insert([
         derniere_taille: NumberDecimal("1.5"),
         annee_naissance: NumberInt(2006),
         espece:"ours",
-        proprietaire: ObjectId("C00000000000000000000002")
+        proprietaire: {nom:"Belmondo", prenom:"Jean-Paul", naissance:"1964-09-10"}
         },
         {
         _id: ObjectId("A00000000000000000000004"),
@@ -72,7 +71,7 @@ db.animaux.insert([
         derniere_taille: NumberDecimal("0.14"),
         annee_naissance: NumberInt(2015),
         espece:"perruche",
-        proprietaire: ObjectId("C00000000000000000000003")
+        proprietaire: {nom:"Bellucci", prenom:"Monica", naissance:"1976-01-22"}
         }
   ])
 
