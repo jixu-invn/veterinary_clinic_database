@@ -1,10 +1,4 @@
-Create(rinoxolone:medicament {name:'Rinoxolone',description:'debloque le foie'})
-
 Create(griffon:Animal {name:"Griffon",poids : toFloat("25.3"), taille : toFloat("1.058"), naissance : date({year : 2012}), espece : 'chien' })
-
-Create(jugnot:client {name:'Gerard Jugnot',naissance:date({year:1955,month:12,day:04}), adresse:'255 avenue foch, Paris',telephone:'0745869621'})
-
-Create(corsair:veterinaire {name:"Pascal Corsair", naissance:date({year:1974,month:07,day:22}), adresse:"5 rue de l'auberge, Reims",telephone:'0548789631',specialite:'mammifere'})
 
 Create(t1:Traitement {name:"traitement foie",debut : date({year:2015, month:06, day:16}) })
  
@@ -26,7 +20,7 @@ CREATE (reptile:Classe {name:"reptile"})
 
 CREATE (v1:veto {lastname:'Corsair',firstname:'Pascal',naissance:date({year:1974,month:07, day:22}),adresse:"5 rue de l'auberge, Reims",tel:'0548789631'})
 CREATE (v2:veto {lastname:'Lamart',firstname:'Marc',naissance:date({year:1990,month:04,day:15}),adresse:"2 rue de compiegne, Soissons",tel:'0478956314'})
-CREATE (V3:veto {lastname:'Colombain',firstname:'Sebastien',naissance:date({year:1985,month:8,day:30}),adresse:"8 boulevard malesherbes, Paris",tel:'0164044098'})
+CREATE (v3:veto {lastname:'Colombain',firstname:'Sebastien',naissance:date({year:1985,month:8,day:30}),adresse:"8 boulevard malesherbes, Paris",tel:'0164044098'})
 CREATE (v4:veto {lastname:'Sorel',firstname:'Valerie',naissance:date({year:1968,month:04,day:24}),adresse:"10 place de la bourse, Autreville",tel:'0578946321'})
 
 // Spécialité
@@ -35,5 +29,17 @@ CREATE(v2)-[:a_pour_spe]->(poisson)
 CREATE(v3)-[:a_pour_spe]->(oiseau)
 CREATE(v4)-[:a_pour_spe]->(reptile)
 
-match(n)-[l]-(m) delete l
-match(n) delete n
+// Clients
+CREATE (c1:client {lastname:'Jugnot', firstname:'Gerard',naissance:date({year:1955,month:12,day:04}), adresse:'255 avenue foch, Paris',tel:'0745869621'})
+CREATE (c2:client {lastname:'Belmondo', firstname:'Jean-Paul',naissance:date({year:1964,month:9,day:10}), adresse:'1024 boulevard de la vilette, Niors',tel:'0515487959'})
+CREATE (c3:client {lastname:'Cotillard', firstname:'Marion',naissance:date({year:1985,month:4,day:12}), adresse:'41 rue de neuilly, Nanterre',tel:'0256368596'})
+CREATE (c4:client {lastname:'Bellucci', firstname:'Monica',naissance:date({year:1976,month:1,day:22}), adresse:'85 rue Chantilly, Marseille',tel:'0485963214'})
+
+// Medicaments
+
+CREATE (rinoxolone:medicament {name:'Rinoxolone',description:'debloque le foie'})
+
+
+/////
+
+MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n, r
