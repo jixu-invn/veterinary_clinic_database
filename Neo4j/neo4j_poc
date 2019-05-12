@@ -38,6 +38,10 @@ CREATE (c4:client {lastname:'Bellucci', firstname:'Monica',naissance:date({year:
 // Medicaments
 
 CREATE (rinoxolone:medicament {name:'Rinoxolone',description:'debloque le foie'})
+CREATE (crisaline:medicament {name:'crisaline',description:'diminue le voile'})
+CREATE (bronchioture:medicament {name:'bronchioture',description:'nettoie les bronchies'})
+CREATE (stomatose:medicament {name:'stomatose',description:'diminue l''acidite'})
+
 
 
 /////
