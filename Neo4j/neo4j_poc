@@ -1,9 +1,4 @@
-Create(t1:Traitement {name:"traitement foie",debut : date({year:2015, month:06, day:16}) })
- 
-Create(jugnot)-[:possede ]->(griffon)
-Create(corsair)-[:prescrit]->(traitement_foie)
 Create(rinoxolone)-[:compose]->(traitement_foie)
-Create(traitement_foie)-[:prescrit_a]->(griffon)
 
 
 // Creation des classes d'espece
@@ -39,6 +34,11 @@ CREATE(a2:Animal {name:"Pikachu",poids : toFloat("0.5"), taille : toFloat("0.1")
 CREATE(a3:Animal {name:"Ficelle",poids : toFloat("5"), taille : toFloat("3.2"), naissance : date({year : 2013})})
 CREATE(a4:Animal {name:"Bloup",poids : toFloat("0.2"), taille : toFloat("1.1"), naissance : date({year : 2014})})
 
+CREATE (c1)-[:est_le_proprietaire_de]->(a1)
+CREATE (c2)-[:est_le_proprietaire_de]->(a2)
+CREATE (c3)-[:est_le_proprietaire_de]->(a3)
+CREATE (c3)-[:est_le_proprietaire_de]->(a4)
+
 // Espèces
 CREATE(chien:espece {name:"chien"})
 CREATE(souris:espece {name:"souris"})
@@ -61,6 +61,36 @@ CREATE (rinoxolone:medicament {name:'Rinoxolone',description:'debloque le foie'}
 CREATE (crisaline:medicament {name:'crisaline',description:'diminue le voile'})
 CREATE (bronchioture:medicament {name:'bronchioture',description:'nettoie les bronchies'})
 CREATE (stomatose:medicament {name:'stomatose',description:"diminue l'acidite"})
+
+CREATE (rinoxolone)-[:autorise_pour]->(chien)
+CREATE (rinoxolone)-[:autorise_pour]->(souris)
+CREATE (rinoxolone)-[:autorise_pour]->(serpent)
+CREATE (crisaline)-[:autorise_pour]->(thon)
+CREATE (bronchioture)-[:autorise_pour]->(thon)
+CREATE (stomatose)-[:autorise_pour]->(serpent)
+
+// Traitements
+CREATE(t1:Traitement {name:"traitement foie",debut : date({year:2015, month:6, day:6})})
+CREATE(t2:Traitement {name:"traitement oeil",debut : date({year:2015, month:8, day:1})})
+CREATE(t3:Traitement {name:"traitement foie",debut : date({year:2016, month:6, day:10})})
+CREATE(t4:Traitement {name:"traitement jambe",debut : date({year:2015, month:6, day:17})})
+
+CREATE (t1)-[:prescrit_par]->(v1)
+CREATE (t2)-[:prescrit_par]->(v2)
+CREATE (t3)-[:prescrit_par]->(v1)
+CREATE (t4)-[:prescrit_par]->(v3)
+
+CREATE (t1)-[:prescrit_a]->(a1)
+CREATE (t2)-[:prescrit_a]->(a2)
+CREATE (t3)-[:prescrit_a]->(a3)
+CREATE (t4)-[:prescrit_a]->(a4)
+
+CREATE(t1)-[:contient {quantite_journaliere:15, fin: date({year:2015, month:6, day:16})}]->(rinoxolone)
+CREATE(t2)-[:contient {quantite_journaliere:10, fin: date({year:2015, month:9, day:16})}]->(rinoxolone)
+CREATE(t3)-[:contient {quantite_journaliere:40, fin: date({year:2016, month:6, day:16})}]->(rinoxolone)
+CREATE(t3)-[:contient {quantite_journaliere:10, fin: date({year:2016, month:6, day:20})}]->(stomatose)
+CREATE(t4)-[:contient {quantite_journaliere:4, fin: date({year:2015, month:6, day:25})}]->(crisaline)
+CREATE(t4)-[:contient {quantite_journaliere:4, fin: date({year:2015, month:6, day:23})}]->(bronchioture)
 
 
 
