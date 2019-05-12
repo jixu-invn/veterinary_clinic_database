@@ -1,5 +1,3 @@
-Create(griffon:Animal {name:"Griffon",poids : toFloat("25.3"), taille : toFloat("1.058"), naissance : date({year : 2012}), espece : 'chien' })
-
 Create(t1:Traitement {name:"traitement foie",debut : date({year:2015, month:06, day:16}) })
  
 Create(jugnot)-[:possede ]->(griffon)
@@ -35,12 +33,34 @@ CREATE (c2:client {lastname:'Belmondo', firstname:'Jean-Paul',naissance:date({ye
 CREATE (c3:client {lastname:'Cotillard', firstname:'Marion',naissance:date({year:1985,month:4,day:12}), adresse:'41 rue de neuilly, Nanterre',tel:'0256368596'})
 CREATE (c4:client {lastname:'Bellucci', firstname:'Monica',naissance:date({year:1976,month:1,day:22}), adresse:'85 rue Chantilly, Marseille',tel:'0485963214'})
 
+// Animaux
+CREATE(a1:Animal {name:"Griffon",poids : toFloat("25.3"), taille : toFloat("1.058"), naissance : date({year : 2012})})
+CREATE(a2:Animal {name:"Pikachu",poids : toFloat("0.5"), taille : toFloat("0.1"), naissance : date({year : 2016})})
+CREATE(a3:Animal {name:"Ficelle",poids : toFloat("5"), taille : toFloat("3.2"), naissance : date({year : 2013})})
+CREATE(a4:Animal {name:"Bloup",poids : toFloat("0.2"), taille : toFloat("1.1"), naissance : date({year : 2014})})
+
+// Espèces
+CREATE(chien:espece {name:"chien"})
+CREATE(souris:espece {name:"souris"})
+CREATE(serpent:espece {name:"serpent"})
+CREATE(thon:espece {name:"thon"})
+
+CREATE (a1)-[:a_pour_espece]->(chien)
+CREATE (a2)-[:a_pour_espece]->(souris)
+CREATE (a3)-[:a_pour_espece]->(serpent)
+CREATE (a4)-[:a_pour_espece]->(thon)
+
+CREATE (chien)-[:a_pour_classe]->(mammifere)
+CREATE (souris)-[:a_pour_classe]->(mammifère)
+CREATE (serpent)-[:a_pour_classe]->(reptile)
+CREATE (thon)-[:a_pour_classe]->(poisson)
+
 // Medicaments
 
 CREATE (rinoxolone:medicament {name:'Rinoxolone',description:'debloque le foie'})
 CREATE (crisaline:medicament {name:'crisaline',description:'diminue le voile'})
 CREATE (bronchioture:medicament {name:'bronchioture',description:'nettoie les bronchies'})
-CREATE (stomatose:medicament {name:'stomatose',description:'diminue l''acidite'})
+CREATE (stomatose:medicament {name:'stomatose',description:"diminue l'acidite"})
 
 
 
