@@ -1,6 +1,3 @@
-Create(rinoxolone)-[:compose]->(traitement_foie)
-
-
 // Creation des classes d'espece
 
 CREATE (poisson:Classe {name:"Poisson"})
