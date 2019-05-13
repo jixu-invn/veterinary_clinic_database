@@ -9,7 +9,7 @@ CREATE CONSTRAINT ON (c:client) ASSERT exists(c.tel)
 CREATE CONSTRAINT ON (m:medicament) ASSERT m.name IS UNIQUE
 
 
-CONTRAINTES
+# CONTRAINTES
 ATTRIBUTS :
 • veto :
 - (firstname, lastname, naissance) KEY
@@ -38,8 +38,8 @@ ATTRIBUTS :
 - quantite_journaliere NOT NULL
 - fin NOT NULL
 
-CARDINALITES :
-• Chaque veto a pour specialité une espèce en particulier : veto "*"--"1" espece
+# CARDINALITES :
+• Chaque veto a une spécialité  et plusieurs veto peuvent avoir la même spécialité: veto "*"--"1" classe
 • Un client peut posseder plusieurs animaux mais un animal n'est lié qu'à un seul client : animal "1"--"*" client
 • Un animal n'appartient qu'à une seule espèce : animal "*"--"1" espece
 • Un medicament peut être prescrit dans plus traitements et un traitement peut contenir plusieurs medicaments : traitement "*"--"1..*" medicament
