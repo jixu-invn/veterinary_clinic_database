@@ -1,0 +1,16 @@
+CONTRAINTES
+• veto :
+- (firstname, lastname, naissance) KEY
+- adresse NOT NULL
+- tel NOT NULL
+
+• client :
+- (firstname, lastname, naissance) KEY
+- adresse NOT NULL
+- tel NOT NULL
+
+• animal :
+- name NOT NULL
+- taille > 0
+- pods > 0
+- naissance : in years
