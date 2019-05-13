@@ -45,5 +45,5 @@ CARDINALITES :
 • Un medicament peut être prescrit dans plus traitements et un traitement peut contenir plusieurs medicaments : traitement "*"--"1..*" medicament
 • Un veto peut prescrire plusieurs traitements : veto "1"--"*" traitement
 • Plusieurs traitements peuvent être prescris à un animal : traitement "*"--"1" animal
-• Plusieurs medicaments peuvent être autorisés pour plusieurs espèce : medicaments "*"--"*" espece
-
+• Plusieurs medicaments peuvent être autorisés pour plusieurs espèces : medicaments "*"--"*" espece
+  - Un médicament ne peut être prescrit à un animal que si l'animal appartient à une espèce pour laquelle le médicament est autorisé
