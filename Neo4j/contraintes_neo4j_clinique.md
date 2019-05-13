@@ -1,3 +1,5 @@
+Contraintes non exprimées par le Neo4j
+===
 CREATE CONSTRAINT ON (v:veto) ASSERT (v.firstname, v.lastname, v.naissance) IS NODE KEY //marche peut-etre ?
 CREATE CONSTRAINT ON (v:veto) ASSERT exists(v.adress)
 CREATE CONSTRAINT ON (v:veto) ASSERT exists(v.tel)
@@ -9,8 +11,8 @@ CREATE CONSTRAINT ON (c:client) ASSERT exists(c.tel)
 CREATE CONSTRAINT ON (m:medicament) ASSERT m.name IS UNIQUE
 
 
-# CONTRAINTES
-ATTRIBUTS :
+
+# ATTRIBUTS :
 
 • veto :
 - (firstname, lastname, naissance) KEY
