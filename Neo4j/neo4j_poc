@@ -1,3 +1,5 @@
+///// DB clean : MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n, r
+
 // Creation des classes d'espece
 
 CREATE (poisson:Classe {name:"Poisson"})
@@ -89,8 +91,3 @@ CREATE(t3)-[:contient {quantite_journaliere:10, fin: date({year:2016, month:6, d
 CREATE(t4)-[:contient {quantite_journaliere:4, fin: date({year:2015, month:6, day:25})}]->(crisaline)
 CREATE(t4)-[:contient {quantite_journaliere:4, fin: date({year:2015, month:6, day:23})}]->(bronchioture)
 
-
-
-/////
-
-MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n, r
