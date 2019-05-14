@@ -1,7 +1,7 @@
 // Creation des classes d'espece
 
 CREATE (poisson:Classe {name:"Poisson"})
-CREATE (mammmifere:Classe {name:"mammifère"})
+CREATE (mammifere:Classe {name:"mammifère"})
 CREATE (oiseau:Classe {name:"oiseau"})
 CREATE (reptile:Classe {name:"reptile"})
 
@@ -48,7 +48,7 @@ CREATE (a3)-[:a_pour_espece]->(serpent)
 CREATE (a4)-[:a_pour_espece]->(thon)
 
 CREATE (chien)-[:a_pour_classe]->(mammifere)
-CREATE (souris)-[:a_pour_classe]->(mammifère)
+CREATE (souris)-[:a_pour_classe]->(mammifere)
 CREATE (serpent)-[:a_pour_classe]->(reptile)
 CREATE (thon)-[:a_pour_classe]->(poisson)
 
