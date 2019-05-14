@@ -1,4 +1,5 @@
-Contraintes non exprimes par neo4j
+Contraintes non exprimées par neo4j
+===
 
 # ATTRIBUTS :
 
