@@ -1,0 +1,64 @@
+@startuml
+hide circle
+
+abstract class Individu {
+  Nom : string
+  Prénom : string
+  Date de naissance : Date
+  Adresse : string
+  Téléphone : string {Respecte l'expression régulière relative aux numéros de téléphone}
+  (Nom,Prénom,Date de naissance) key
+}
+
+class Client {
+}
+
+class Vétérinaire{
+    id : integer {key}
+}
+
+class Classe_espèces_animales{
+  nom : string {key}
+}
+
+class Animal{
+  Nom : string
+  Dernier poids mesuré : float {Peut-être manquant; poids >0}
+  Dernière taille mesurée : float {Peut-être manquant; taille >0}
+  Année : int {Peut-être manquant; année > 1800}
+  
+  maj_poids()
+  maj_taille()
+}
+
+class Espèce{
+  nom : string{key}
+}
+
+class Médicament{
+  molécule : string {key}
+}
+
+class Contient{
+}
+
+class Traitement{
+  nom : string
+  debut: date
+  /Durée_traitement : int
+}
+
+Individu <|-- Client
+
+
+Espèce "*" -- "1" Classe_espèces_animales: appartient à >
+Animal "*" -- "1" Espèce: appartient à >
+Client "1" -- "1..*" Animal : possède >
+
+Vétérinaire "1" -- "*" Traitement : prescrit >
+Traitement "*" -- "1" Animal : est prescit à >
+Traitement "*" -- "1..*" Médicament
+(Traitement,Médicament) .. Contient
+
+
+@enduml
