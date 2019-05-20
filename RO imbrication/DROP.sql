@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS Traitements;
-DROP TABLE IF EXISTS Animaux;
-DROP TABLE IF EXISTS Clients;
+DROP TABLE Traitements;
+DROP TABLE Animaux;
+DROP TABLE Clients;
 
-DROP TYPE IF EXISTS listeMedoc;
-DROP TYPE IF EXISTS medoc;
-DROP TYPE IF EXISTS TypEspece;
+DROP TYPE listeMedoc;
+DROP TYPE medoc;
+DROP TYPE TypEspece;
