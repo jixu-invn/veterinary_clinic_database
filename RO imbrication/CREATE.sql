@@ -1,16 +1,12 @@
-CREATE TYPE OR REPLACE TypEspece AS OBJECT
-          (nom VARCHAR(50),
-          classe VARCHAR(30));
+CREATE TYPE TypEspece AS OBJECT
+          (nom VARCHAR2(50),
+          classe VARCHAR2(30));
 /
-CREATE TYPE OR REPLACE medoc AS OBJECT(molecule VARCHAR(50));
+CREATE TYPE medoc AS OBJECT(molecule VARCHAR(50));
 /
-CREATE TYPE OR REPLACE listeMedoc AS TABLE OF medoc;
+CREATE TYPE listeMedoc AS TABLE OF medoc;
 /
 
-
-DROP TABLE IF EXISTS Clients;
-DROP TABLE IF EXISTS Animaux;
-DROP TABLE IF EXISTS Traitements;
 
 CREATE TABLE Clients
               (id INTEGER PRIMARY KEY ,
@@ -18,7 +14,7 @@ CREATE TABLE Clients
               prenom VARCHAR(30) NOT NULL,
               naissance date NOT NULL,
               adresse VARCHAR(300),
-              tel VARCHAR(10) CHECK (tel ~ '[[:digit:]]{10}'),
+              tel VARCHAR(10) CHECK (tel LIKE '[[:digit:]]{10}'),
               UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
             );
 
@@ -41,7 +37,8 @@ CREATE TABLE Traitements
             fin DATE NOT NULL,
             veto INTEGER NOT NULL,
             animal INTEGER NOT NULL,
-            medicaments listeMedoc NOT NULL,
+            medicaments listeMedoc,
             FOREIGN KEY (animal) REFERENCES Animaux(id),
             UNIQUE(veto, debut, animal)
           ) NESTED TABLE medicaments STORE AS tListeMedoc;
+
