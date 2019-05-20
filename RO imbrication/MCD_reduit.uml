@@ -45,6 +45,7 @@ class Contient{
 class Traitement{
   nom : string
   debut: date
+  fin: date
   /Durée_traitement : int
 }
 
