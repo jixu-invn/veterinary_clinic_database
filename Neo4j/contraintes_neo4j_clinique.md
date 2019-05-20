@@ -31,31 +31,14 @@ Contraintes non exprimées par neo4j
 - fin NOT NULL
 
 # LIENS POSSIBLES ENTRE LES NOEUDS :
+- (veto)-[:a\_pour\_spe]->(classe) : veto "*"--"1" classe. Pas d'attribut. 
+- (client)-[:est\_le\_proprietaire_de]->(animal) : animal "*"--"1" client. Pas d'attribut.
+- (animal)-[:a\_pour\_espece]->(espece) : animal "*"--"1" espece. Pas d'attribut.
+- (espece)-[:a\_pour\_classe]-> (classe) : espece "*" -- "1" classe. Pas d'attribut.
+- (medicament)-[:autorise\_pour]->(espece) : medicaments "*"--"*" espece. Pas d'attribut.
+- (traitement)-[:prescrit_par]->(veto) : veto "1"--"*" traitement. Pas d'attribut.
+- (traitement)-[:prescrit_a]->(animal) : traitement "*"--"1" animal. Pas d'attribut. Un médicament ne peut être prescrit à un animal que si l'animal appartient à une espèce pour laquelle le médicament est autorisé
+- (traitement)-[:contient {quantite_journaliere:., fin: date({year:...., month:.., day:..})}]->(medicament) :  traitement "*"--"1..*" medicament. Deux attributs non nuls.
 
-- un vétérinaire a pour specialité une classe_espèces_animales
-- une classe_espèces_animales peut être la spécialité d'aucun ou plusieurs vétérinaires
-- un vétérinaire peut prescrire plusieurs traitements
-- un traitement est prescrit par un vétérinaire
-- un traitement comporte au moins un medicament
-- un médicament peut faire partie d'aucun ou plusieurs traitements
-- un médicament est autorisé pour au moins une espèce
-- une espèce peut être autorisée pour prendre aucun ou plusieurs médicaments
-- un client possède au moins un animal
-- un animal est possedé par un client
-- un traitement est prescrit à un animal
-- un animal peut avoir aucun ou plusieurs traitements
-- un animal appartient à une espèce
-- une espèce peut détenir aucun ou plusieurs animaux
-
-# CARDINALITES :
-
-- Chaque veto a une spécialité  et plusieurs veto peuvent avoir la même spécialité: veto "*"--"1" classe
-- Un client peut posseder plusieurs animaux mais un animal n'est lié qu'à un seul client : animal "*"--"1" client
-- Un animal n'appartient qu'à une seule espèce : animal "*"--"1" espece
-- Un medicament peut être prescrit dans plus traitements et un traitement peut contenir plusieurs medicaments : traitement "*"--"1..*" medicament
-- Un veto peut prescrire plusieurs traitements : veto "1"--"*" traitement
-- Plusieurs traitements peuvent être prescris à un animal : traitement "*"--"1" animal
-- Plusieurs medicaments peuvent être autorisés pour plusieurs espèces : medicaments "*"--"*" espece
-- Un médicament ne peut être prescrit à un animal que si l'animal appartient à une espèce pour laquelle le médicament est autorisé
 
 
