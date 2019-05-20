@@ -20,3 +20,8 @@ INSERT INTO Clients VALUES
                 TO_DATE('1985-04-12','YYYY-MM-DD'),
                 '41 rue de neuilly, Nanterre',
                 '0256368596');
+
+INSERT INTO Animaux VALUES (1, 'Griffon', 25.3, 1.058, 2012, 1, TypEspece('chien', 'toutou'));
+INSERT INTO Animaux VALUES (2, 'Manu', 208.7, 2.584, 2013, 2, TypEspece('crocodile','reptile'));
+INSERT INTO Animaux VALUES (3, 'Myrtille', 2.4, 0.268, 2014, 3, TypEspece('truite','poisson'));
+
