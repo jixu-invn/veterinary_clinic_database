@@ -25,3 +25,20 @@ INSERT INTO Animaux VALUES (1, 'Griffon', 25.3, 1.058, 2012, 1, TypEspece('chien
 INSERT INTO Animaux VALUES (2, 'Manu', 208.7, 2.584, 2013, 2, TypEspece('crocodile','reptile'));
 INSERT INTO Animaux VALUES (3, 'Myrtille', 2.4, 0.268, 2014, 3, TypEspece('truite','poisson'));
 
+INSERT INTO Traitements VALUES 
+                (2001,
+                'traitement foie',
+                TO_DATE('2015-06-06','YYYY-MM-DD'),
+                TO_DATE('2015-06-10','YYYY-MM-DD'),
+                1001,
+                1, 
+                listeMedoc(medoc('rinoxolone'),medoc('advil')));
+INSERT INTO Traitements VALUES 
+                (2002,
+                'traitement oeil',
+                TO_DATE('2015-07-01','YYYY-MM-DD'),
+                TO_DATE('2015-08-10','YYYY-MM-DD'),
+                1002,
+                2,
+                listeMedoc(medoc('crisaline')));
+
