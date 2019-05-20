@@ -14,4 +14,7 @@ Jingyuan Guan, Jiali Xu, Marc Damie, Alix Candusso, Valentin Rousseau
 * Livrable 4 : SQL LDD
 * Livrable 5 : Preuves de normalisation
 * Livrable 6 : SQL LMD
+* Livrable 7 : POC MongoDB
+* Livrable 8 : POC Neo4j
+* Livrable 9 : POC ROv1
  
