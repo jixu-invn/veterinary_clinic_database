@@ -7,8 +7,8 @@ l'identification qui nous évitera d'utiliser des clés étrangères.
 * On a crée une redondance/source d'incohérence sur les classes/espèces qui évitent de devoir faire deux jointures afin
 de récupérer la classe à laquelle appartient un animal.
 
-* On considère plusieurs médicaments par traitement et une
-quantité par jour différente pour chaque médicament.
+* __On considère plusieurs médicaments par traitement et une
+quantité par jour différente pour chaque médicament.__
 
 * Notons qu'il ne sera pas possible de contraindre les types créés. On ne pourra donc pas implémenter les contraintes NOT NULL ni le fait qu'un traitement doit contenir AU MOINS un médicament.
 
