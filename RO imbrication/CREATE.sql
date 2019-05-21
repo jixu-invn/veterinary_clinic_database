@@ -42,3 +42,4 @@ CREATE TABLE Traitements
             UNIQUE(veto, debut, animal)
           ) NESTED TABLE medicaments STORE AS tListeMedoc;
 
+COMMIT;
