@@ -42,3 +42,4 @@ INSERT INTO Traitements VALUES
                 2,
                 listeMedoc(medoc('crisaline', 4)));
 
+COMMIT;
