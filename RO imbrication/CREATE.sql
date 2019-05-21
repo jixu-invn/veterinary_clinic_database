@@ -2,7 +2,7 @@ CREATE TYPE TypEspece AS OBJECT
           (nom VARCHAR2(50),
           classe VARCHAR2(30));
 /
-CREATE TYPE medoc AS OBJECT(molecule VARCHAR(50));
+CREATE TYPE medoc AS OBJECT(molecule VARCHAR(50), qte_jour INTEGER);
 /
 CREATE TYPE listeMedoc AS TABLE OF medoc;
 /
