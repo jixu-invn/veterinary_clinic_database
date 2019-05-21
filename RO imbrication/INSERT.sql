@@ -32,7 +32,7 @@ INSERT INTO Traitements VALUES
                 TO_DATE('2015-06-10','YYYY-MM-DD'),
                 1001,
                 1, 
-                listeMedoc(medoc('rinoxolone'),medoc('advil')));
+                listeMedoc(medoc('rinoxolone', 20),medoc('advil', 3)));
 INSERT INTO Traitements VALUES 
                 (2002,
                 'traitement oeil',
@@ -40,5 +40,5 @@ INSERT INTO Traitements VALUES
                 TO_DATE('2015-08-10','YYYY-MM-DD'),
                 1002,
                 2,
-                listeMedoc(medoc('crisaline')));
+                listeMedoc(medoc('crisaline', 4)));
 
