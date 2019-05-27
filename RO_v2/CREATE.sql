@@ -24,16 +24,32 @@ CREATE TYPE TypAssistant UNDER Individu(
             spe VARCHAR(30)
             );
 /
-CREATE TYPE TypAnimal AS OBJECT(
+CREATE TYPE TypTraitement AS OBJECT(
             id INTEGER,
+            nom VARCHAR(100),
+            debut DATE,
+            fin DATE,
+            veto INTEGER,
+            animal INTEGER,
+            medicaments listeMedoc,
+            veto TypVeto
+            );
+/
+CREATE TYPE ListeTraitement AS TABLE OF TypTraitement;
+/
+CREATE TYPE TypAnimal AS OBJECT(
             nom VARCHAR(30),
             dernier_poids FLOAT,
             derniere_taille FLOAT,
             annee_naissance INTEGER,
             proprietaire INTEGER,
             espece VARCHAR(50),
-            FOREIGN KEY (proprietaire) REFERENCES Clients(id)
+            TraitementsPrescrits ListeTraitement
           );
+/
+CREATE TYPE listeAnimaux AS TABLE OF REF TypAnimal;
+/
+
 
 
 CREATE TABLE Classes_especes_animales(nom VARCHAR(30) PRIMARY KEY);
@@ -60,6 +76,11 @@ CREATE TABLE Especes OF TypEspece(
             FOREIGN KEY (classe) REFERENCES Classes_especes_animales(nom)
             );
             
+            
+CREATE TABLE Medoc OF TypMedoc(
+            PRIMARY KEY(molecule)
+            )NESTED TABLE especesAutorisees STORE AS tAutorisees;
+
 CREATE TABLE Animaux
             (id PRIMARY KEY,
             CHECK (dernier_poids>0),
@@ -68,8 +89,7 @@ CREATE TABLE Animaux
             proprietaire NOT NULL,
             espece  NOT NULL,
             FOREIGN KEY(espece) REFERENCES Especes(nom),
-            FOREIGN KEY (proprietaire) REFERENCES Clients(id)
-          );
+          ) NESTED TABLE TraitementsPrescrits STORE AS tPrescription;
 
 
 CREATE TABLE Clients
@@ -79,20 +99,8 @@ CREATE TABLE Clients
               naissance date NOT NULL,
               adresse VARCHAR(300),
               tel VARCHAR(10) CHECK (REGEXP_LIKE(tel,'[[:digit:]]{10}')),
+              animaux_possedes listeAnimaux,
               UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
-            );
-
-CREATE TABLE Traitements
-          (
-            id INTEGER PRIMARY KEY,
-            nom VARCHAR(100) NOT NULL,
-            debut DATE NOT NULL,
-            fin DATE NOT NULL,
-            veto INTEGER NOT NULL,
-            animal INTEGER NOT NULL,
-            medicaments listeMedoc,
-            FOREIGN KEY (animal) REFERENCES Animaux(id),
-            UNIQUE(veto, debut, animal)
-          ) NESTED TABLE medicaments STORE AS tListeMedoc;
+            )NESTED TABLE animaux_possedes STORE AS tListeAnimaux;
 
 COMMIT;
