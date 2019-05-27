@@ -1,6 +1,6 @@
 CREATE TYPE TypEspece AS OBJECT
-          (nom VARCHAR2(50),
-          classe VARCHAR2(30));
+          (nom VARCHAR(50),
+          classe VARCHAR(30));
 /
 CREATE TYPE listeEspecesAutorisees AS TABLE OF REF TypEspece;
 /
@@ -25,14 +25,13 @@ CREATE TYPE TypAssistant UNDER Individu(
             );
 /
 CREATE TYPE TypAnimal AS OBJECT(
-CREATE TABLE Animaux
-            (id INTEGER PRIMARY KEY ,
+            id INTEGER,
             nom VARCHAR(30),
-            dernier_poids FLOAT CHECK (dernier_poids>0),
-            derniere_taille FLOAT CHECK (derniere_taille>0),
-            annee_naissance INTEGER CHECK (ANNEE_NAISSANCE > 1800),
-            proprietaire INTEGER NOT NULL,
-            espece TypEspece NOT NULL,
+            dernier_poids FLOAT,
+            derniere_taille FLOAT,
+            annee_naissance INTEGER,
+            proprietaire INTEGER,
+            espece VARCHAR(50),
             FOREIGN KEY (proprietaire) REFERENCES Clients(id)
           );
 
