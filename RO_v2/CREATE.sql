@@ -8,7 +8,9 @@ CREATE TYPE listeEspecesAutorisees AS TABLE OF RefEsp;
 /
 CREATE TYPE TypMedoc AS OBJECT(molecule VARCHAR(50), description VARCHAR(200), especesAutorisees listeEspecesAutorisees);
 /
-CREATE TYPE listeMedoc AS TABLE OF REF TypMedoc;
+CREATE TYPE RefMedocs AS OBJECT (refMedoc REF TypMedoc);
+/
+CREATE TYPE listeMedoc AS TABLE OF RefMedocs;
 /
 CREATE TYPE Individu AS OBJECT (
     nom VARCHAR(30),
@@ -40,6 +42,7 @@ CREATE TYPE TypTraitement AS OBJECT(
 CREATE TYPE ListeTraitement AS TABLE OF TypTraitement;
 /
 CREATE TYPE TypAnimal AS OBJECT(
+            id INTEGER,
             nom VARCHAR(30),
             dernier_poids FLOAT,
             derniere_taille FLOAT,
@@ -86,7 +89,8 @@ CREATE TABLE Medoc OF TypMedoc(
             )NESTED TABLE especesAutorisees STORE AS tAutorisees;
 
 CREATE TABLE Animaux
-            (id PRIMARY KEY,
+            (
+            PRIMARY KEY(id),
             CHECK (dernier_poids>0),
             CHECK (derniere_taille>0),
             CHECK (ANNEE_NAISSANCE > 1800),
