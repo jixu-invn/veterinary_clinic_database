@@ -1,4 +1,3 @@
-
 CREATE TYPE TypEspece AS OBJECT
           (nom VARCHAR(50),
           classe VARCHAR(30));
@@ -110,5 +109,12 @@ CREATE TABLE Clients
               animaux_possedes listeAnimaux,
               UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
             )NESTED TABLE animaux_possedes STORE AS tListeAnimaux;
+            
+create table Traitements of TypTraitement(
+	id primary key,
+	nom not null,
+	debut not null,
+	fin not null
+)nested table medicaments store as tMedicaments;
 
 COMMIT;
