@@ -2,7 +2,7 @@ CREATE TYPE TypEspece AS OBJECT
           (nom VARCHAR(50),
           classe VARCHAR(30));
 /
-CREATE TYPE RefEsp AS OBJECT (refEsp REF TypEspece);
+CREATE TYPE RefEspece AS OBJECT (refEsp REF TypEspece);
 /
 CREATE TYPE listeEspecesAutorisees AS TABLE OF RefEsp;
 /
@@ -33,7 +33,6 @@ CREATE TYPE TypTraitement AS OBJECT(
             nom VARCHAR(100),
             debut DATE,
             fin DATE,
-            veto INTEGER,
             animal INTEGER,
             medicaments listeMedoc,
             veto REF TypVeto
@@ -42,7 +41,7 @@ CREATE TYPE TypTraitement AS OBJECT(
 CREATE TYPE ListeTraitement AS TABLE OF TypTraitement;
 /
 CREATE TYPE TypAnimal AS OBJECT(
-            id INTEGER,
+            idAnimal INTEGER,
             nom VARCHAR(30),
             dernier_poids FLOAT,
             derniere_taille FLOAT,
@@ -88,15 +87,14 @@ CREATE TABLE Medoc OF TypMedoc(
             PRIMARY KEY(molecule)
             )NESTED TABLE especesAutorisees STORE AS tAutorisees;
 
-CREATE TABLE Animaux
+CREATE TABLE Animaux OF TypAnimal
             (
-            PRIMARY KEY(id),
+            PRIMARY KEY(idAnimal),
             CHECK (dernier_poids>0),
             CHECK (derniere_taille>0),
             CHECK (ANNEE_NAISSANCE > 1800),
-            proprietaire NOT NULL,
             espece  NOT NULL,
-            FOREIGN KEY(espece) REFERENCES Especes(nom),
+            FOREIGN KEY(espece) REFERENCES Especes(nom)
           ) NESTED TABLE TraitementsPrescrits STORE AS tPrescription;
 
 
