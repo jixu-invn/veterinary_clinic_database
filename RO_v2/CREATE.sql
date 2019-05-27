@@ -1,10 +1,11 @@
+
 CREATE TYPE TypEspece AS OBJECT
           (nom VARCHAR(50),
           classe VARCHAR(30));
 /
 CREATE TYPE RefEspece AS OBJECT (refEsp REF TypEspece);
 /
-CREATE TYPE listeEspecesAutorisees AS TABLE OF RefEsp;
+CREATE TYPE listeEspecesAutorisees AS TABLE OF RefEspece;
 /
 CREATE TYPE TypMedoc AS OBJECT(molecule VARCHAR(50), description VARCHAR(200), especesAutorisees listeEspecesAutorisees);
 /
@@ -37,7 +38,9 @@ CREATE TYPE TypTraitement AS OBJECT(
             veto REF TypVeto
             );
 /
-CREATE TYPE ListeTraitement AS TABLE OF TypTraitement;
+CREATE TYPE RefTrait AS OBJECT (refTraitement REF TypTraitement);
+/
+CREATE TYPE ListeTraitement AS TABLE OF RefTrait;
 /
 CREATE TYPE TypAnimal AS OBJECT(
             idAnimal INTEGER,
