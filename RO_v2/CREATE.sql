@@ -6,6 +6,41 @@ CREATE TYPE medoc AS OBJECT(molecule VARCHAR(50), qte_jour INTEGER);
 /
 CREATE TYPE listeMedoc AS TABLE OF medoc;
 /
+CREATE TYPE TypVeto AS OBJECT(
+            id INTEGER PRIMARY KEY ,
+            nom VARCHAR(30) NOT NULL,
+            prenom VARCHAR(30) NOT NULL,
+            naissance date NOT NULL,
+            adresse VARCHAR(300),
+            tel VARCHAR(10),
+            spe VARCHAR(30)
+            );
+/
+
+CREATE TABLE Classes_especes_animales(nom VARCHAR(30) PRIMARY KEY);
+
+CREATE TABLE Veto OF TypVeto(
+            CHECK (REGEXP_LIKE(tel,'[[:digit:]]{10}')),
+            UNIQUE(nom,prenom,naissance),
+            FOREIGN KEY(spe) REFERENCES Classes_especes_animales(nom)
+            );
+
+
+CREATE TABLE Veto(
+            id INTEGER PRIMARY KEY ,
+            nom VARCHAR(30) NOT NULL,
+            prenom VARCHAR(30) NOT NULL,
+            naissance date NOT NULL,
+            adresse VARCHAR(300),
+            tel VARCHAR(10) CHECK (REGEXP_LIKE(tel,'[[:digit:]]{10}')),
+            spe VARCHAR(30),
+            UNIQUE(nom,prenom,naissance),
+            FOREIGN KEY(spe) REFERENCES Classes_especes_animales(nom)
+            );
+
+CREATE TABLE Especes OF TypEspece(
+            FOREIGN KEY (classe) REFERENCES Classes_especes_animales(nom)
+            );
 
 
 CREATE TABLE Clients
