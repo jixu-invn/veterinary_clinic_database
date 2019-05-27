@@ -33,7 +33,6 @@ CREATE TYPE TypTraitement AS OBJECT(
             nom VARCHAR(100),
             debut DATE,
             fin DATE,
-            animal INTEGER,
             medicaments listeMedoc,
             veto REF TypVeto
             );
@@ -46,7 +45,6 @@ CREATE TYPE TypAnimal AS OBJECT(
             dernier_poids FLOAT,
             derniere_taille FLOAT,
             annee_naissance INTEGER,
-            proprietaire INTEGER,
             espece VARCHAR(50),
             TraitementsPrescrits ListeTraitement
           );
