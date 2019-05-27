@@ -9,7 +9,7 @@ DROP TABLE Classes_especes_animales;
 DROP TYPE listeAnimaux;
 DROP TYPE RefAnimaux;
 DROP TYPE TypAnimal;
-DROP TYPE ListeTraitement:
+DROP TYPE ListeTraitement;
 DROP TYPE TypTraitement;
 DROP TYPE TypAssistant;
 DROP TYPE TypVeto;
@@ -18,7 +18,7 @@ DROP TYPE ListeMedoc;
 DROP TYPE RefMedocs;
 DROP TYPE TypMedoc;
 DROP TYPE ListeEspecesAutorisees;
-DROP TYPE RefEsp;
+DROP TYPE RefEspece;
 DROP TYPE TypEspece;
 
 COMMIT;
