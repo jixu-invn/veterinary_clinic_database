@@ -79,6 +79,7 @@ CREATE TABLE Assistants OF TypAssistant(
             );
 
 CREATE TABLE Especes OF TypEspece(
+            PRIMARY KEY (nom),
             FOREIGN KEY (classe) REFERENCES Classes_especes_animales(nom)
             );
             
