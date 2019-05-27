@@ -41,3 +41,25 @@ insert into Traitements values(
         RefMedocs(ref2, 20)),
     ref3);
 end;
+
+declare 
+ref4 ref TypTraitement;
+
+begin
+
+select ref(Tr) into ref4
+from Traitements Tr
+where Tr.id = 2001;
+
+insert into Animaux values(
+    1, 
+    'Griffon', 
+    25.3, 
+    1.058, 
+    2012,
+    'chien',
+    ListeTraitement(RefTrait(ref4))
+    );
+
+end;
+
