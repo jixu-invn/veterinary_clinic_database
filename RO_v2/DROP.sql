@@ -10,6 +10,7 @@ DROP TYPE listeAnimaux;
 DROP TYPE RefAnimaux;
 DROP TYPE TypAnimal;
 DROP TYPE ListeTraitement;
+DROP TYPE RefTrait;
 DROP TYPE TypTraitement;
 DROP TYPE TypAssistant;
 DROP TYPE TypVeto;
