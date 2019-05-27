@@ -8,7 +8,7 @@ CREATE TYPE listeEspecesAutorisees AS TABLE OF RefEsp;
 /
 CREATE TYPE TypMedoc AS OBJECT(molecule VARCHAR(50), description VARCHAR(200), especesAutorisees listeEspecesAutorisees);
 /
-CREATE TYPE RefMedocs AS OBJECT (refMedoc REF TypMedoc);
+CREATE TYPE RefMedocs AS OBJECT (refMedoc REF TypMedoc, qte INTEGER);
 /
 CREATE TYPE listeMedoc AS TABLE OF RefMedocs;
 /
