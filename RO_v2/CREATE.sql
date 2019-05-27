@@ -24,6 +24,17 @@ CREATE TYPE TypAssistant UNDER Individu(
             spe VARCHAR(30)
             );
 /
+CREATE TYPE TypAnimal AS OBJECT(
+CREATE TABLE Animaux
+            (id INTEGER PRIMARY KEY ,
+            nom VARCHAR(30),
+            dernier_poids FLOAT CHECK (dernier_poids>0),
+            derniere_taille FLOAT CHECK (derniere_taille>0),
+            annee_naissance INTEGER CHECK (ANNEE_NAISSANCE > 1800),
+            proprietaire INTEGER NOT NULL,
+            espece TypEspece NOT NULL,
+            FOREIGN KEY (proprietaire) REFERENCES Clients(id)
+          );
 
 
 CREATE TABLE Classes_especes_animales(nom VARCHAR(30) PRIMARY KEY);
@@ -49,6 +60,17 @@ CREATE TABLE Assistants OF TypAssistant(
 CREATE TABLE Especes OF TypEspece(
             FOREIGN KEY (classe) REFERENCES Classes_especes_animales(nom)
             );
+            
+CREATE TABLE Animaux
+            (id PRIMARY KEY,
+            CHECK (dernier_poids>0),
+            CHECK (derniere_taille>0),
+            CHECK (ANNEE_NAISSANCE > 1800),
+            proprietaire NOT NULL,
+            espece  NOT NULL,
+            FOREIGN KEY(espece) REFERENCES Especes(nom),
+            FOREIGN KEY (proprietaire) REFERENCES Clients(id)
+          );
 
 
 CREATE TABLE Clients
@@ -60,17 +82,6 @@ CREATE TABLE Clients
               tel VARCHAR(10) CHECK (REGEXP_LIKE(tel,'[[:digit:]]{10}')),
               UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
             );
-
-CREATE TABLE Animaux
-            (id INTEGER PRIMARY KEY ,
-            nom VARCHAR(30),
-            dernier_poids FLOAT CHECK (dernier_poids>0),
-            derniere_taille FLOAT CHECK (derniere_taille>0),
-            annee_naissance INTEGER CHECK (ANNEE_NAISSANCE > 1800),
-            proprietaire INTEGER NOT NULL,
-            espece TypEspece NOT NULL,
-            FOREIGN KEY (proprietaire) REFERENCES Clients(id)
-          );
 
 CREATE TABLE Traitements
           (
