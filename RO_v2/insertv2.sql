@@ -63,3 +63,24 @@ insert into Animaux values(
 
 end;
 
+declare 
+ref5 ref TypAnimal;
+
+begin
+
+select ref(An) into ref5
+from Animaux An
+where An.idAnimal = 1;
+
+insert into Clients values(
+    9001,
+    'Jugnot',
+    'Gerard',
+    TO_DATE('1955-12-04','YYYY-MM-DD'),
+    '255 avenue foch, Paris',
+    '0745869621',
+    listeAnimaux(RefAnimaux(ref5))
+    );
+    
+end;
+
