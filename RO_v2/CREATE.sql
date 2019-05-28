@@ -114,7 +114,8 @@ create table Traitements of TypTraitement(
 	id primary key,
 	nom not null,
 	debut not null,
-	fin not null
+	fin not null,
+	SCOPE FOR (veto) IS veto
 )nested table medicaments store as tMedicaments;
 
 COMMIT;
