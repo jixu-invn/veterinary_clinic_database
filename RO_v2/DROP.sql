@@ -1,3 +1,4 @@
+DROP TABLE Traitements;
 DROP TABLE Clients;
 DROP TABLE Animaux;
 DROP TABLE Medoc;
@@ -5,7 +6,6 @@ DROP TABLE Especes;
 DROP TABLE Assistants;
 DROP TABLE Veto;
 DROP TABLE Classes_especes_animales;
-DROP TABLE Traitements;
 
 DROP TYPE listeAnimaux;
 DROP TYPE RefAnimaux;
