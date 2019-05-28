@@ -15,7 +15,7 @@ insert into medoc values('rinoxolone','desc_rinoxolone', listeEspecesAutorisees(
 end;
 
 
-insert into veto values('prof', 'oak', TO_DATE('1111-11-11','YYYY-MM-DD'),'', '', 'mammifere');
+insert into veto(nom,prenom,naissance,spe) values('prof', 'oak', TO_DATE('1111-11-11','YYYY-MM-DD'), 'mammifere');
 
 declare
 ref2 ref TypMedoc;
