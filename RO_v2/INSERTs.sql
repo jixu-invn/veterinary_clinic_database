@@ -154,3 +154,5 @@ insert into Clients values(9003,'Cotillard','Marion',TO_DATE('1985-04-12','YYYY-
 
 end;
 /
+
+COMMIT;
