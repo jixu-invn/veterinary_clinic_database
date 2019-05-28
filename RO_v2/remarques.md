@@ -1,4 +1,4 @@
-Remarques à propos du POC ROv1
+Remarques à propos du POC ROv2
 ===
 
 * Les créations et les insertions sont un peu plus lourdes mais cela simplifiera grandement
