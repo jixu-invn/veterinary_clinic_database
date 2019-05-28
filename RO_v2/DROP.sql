@@ -5,6 +5,7 @@ DROP TABLE Especes;
 DROP TABLE Assistants;
 DROP TABLE Veto;
 DROP TABLE Classes_especes_animales;
+DROP TABLE Traitements;
 
 DROP TYPE listeAnimaux;
 DROP TYPE RefAnimaux;
