@@ -13,7 +13,7 @@ where Es.nom = 'chien';
 insert into medoc values('rinoxolone','desc_rinoxolone', listeEspecesAutorisees(RefEspece(ref1)));
 
 end;
-
+/
 
 insert into veto(nom,prenom,naissance,spe) values('prof', 'oak', TO_DATE('1111-11-11','YYYY-MM-DD'), 'mammifere');
 
@@ -41,6 +41,7 @@ insert into Traitements values(
         RefMedocs(ref2, 20)),
     ref3);
 end;
+/
 
 declare 
 ref4 ref TypTraitement;
@@ -62,6 +63,7 @@ insert into Animaux values(
     );
 
 end;
+/
 
 declare 
 ref5 ref TypAnimal;
@@ -83,7 +85,7 @@ insert into Clients values(
     );
     
 end;
-
+/
 
 --------------------------------------------------
 
@@ -101,7 +103,7 @@ where E.nom = 'truite';
 insert into medoc values('bronchioture','nettoie les bronchies', listeEspecesAutorisees(RefEspece(r1)));
 
 end;
-
+/
 insert into veto values('Corsair','Pascal',TO_DATE('1974-07-22','YYYY-MM-DD'),'5 rue de l''auberge, Reims','0548789631','poisson'); 
 insert into assistants values('Gaudron','Michel',TO_DATE('1978-06-27','YYYY-MM-DD'),'40 rue de la rose, Compiegne','0542788965','poisson');
 
@@ -123,6 +125,7 @@ insert into Traitements values(
 	2002,'traitement bronchie',TO_DATE('2015-06-08','YYYY-MM-DD'),TO_DATE('2015-06-18','YYYY-MM-DD'),
 	listeMedoc(RefMedocs(r2,10)),r3);
 end;
+/
 
 declare r4 ref TypTraitement;
 
@@ -135,6 +138,7 @@ where T.id = 2002;
 insert into Animaux values(3,'Myrtille',2.4,.268,2014,'truite',ListeTraitement(RefTrait(r4)));
 
 end;
+/
 
 declare 
 r5 ref TypAnimal;
@@ -149,5 +153,4 @@ insert into Clients values(9003,'Cotillard','Marion',TO_DATE('1985-04-12','YYYY-
 '41 rue de neuilly, Nanterre','0256368596',listeAnimaux(RefAnimaux(r5)));
 
 end;
-
-
+/
