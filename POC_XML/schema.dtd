@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT traitements (traitement*)>
+<!ELEMENT traitement (medicament*)>
+<!ELEMENT medicament (#PCDATA)>
+<!ATTLIST medicament qte CDATA #REQUIRED>
+<!ATTLIST traitement nom_veto CDATA #REQUIRED>
+<!ATTLIST traitement debut CDATA #REQUIRED>
+<!ATTLIST traitement fin CDATA #REQUIRED>
