@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE traitements[
+<!ELEMENT traitements (traitement*)>
+<!ELEMENT traitement (medicament*)>
+<!ELEMENT medicament (#PCDATA)>
+<!ATTLIST medicament qte CDATA #REQUIRED>
+<!ATTLIST traitement nom_veto CDATA #REQUIRED>
+<!ATTLIST traitement debut CDATA #REQUIRED>
+<!ATTLIST traitement fin CDATA #REQUIRED>
+]>
+<traitements>
+	<traitement nom_veto="Lamart" debut="2015-06-06" fin="2015-08-06">
+		<medicament qte="20">rinoxolone</medicament>
+	</traitement>
+</traitements>
