@@ -40,6 +40,21 @@ INSERT INTO Animaux Values(1003,'Pikachu',3.0,.50,1998,XMLTYPE('
 		<medicament qte="1">potion</medicament>
 	</traitement>
 </traitements>'),
-9003,'souris');
+9005,'souris');
 
 ---------------------------------------------------------------------
+
+INSERT INTO ESPECE VALUES('loup','mammifere');
+
+INSERT INTO Clients VALUES(9007,'Jon','Snow',TO_DATE('1302-01-01','YYYY-MM-DD'),'Winterfell','0666666666');
+
+INSERT INTO Animaux Values(1004,'Ghost',100.0,1.30,1320,XMLTYPE('
+<traitements>
+	<traitement nom_veto="Tarly" debut="1330-05-27" fin="1330-05-30">
+		<medicament qte="3">miel</medicament>
+	</traitement>
+	<traitement nom_veto="Tarly" debut="1330-05-30" fin="1330-06-10">
+		<medicament qte="10">rose thé</medicament>
+	</traitement>
+</traitements>'),
+9007,'loup');
