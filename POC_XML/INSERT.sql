@@ -29,3 +29,17 @@ INSERT INTO Animaux Values(1002,'Myrtille',2.4,.268,2014,XMLTYPE('
 9003,'truite');
 
 ---------------------------------------------------------------------
+
+INSERT INTO ESPECE VALUES('souris','mammifere');
+
+INSERT INTO Clients VALUES(9005,'Ketchum','Sasha',TO_DATE('1998-07-08','YYYY-MM-DD'),'Bourg-Palette','0678901234');
+
+INSERT INTO Animaux Values(1003,'Pikachu',3.0,.50,1998,XMLTYPE('
+<traitements>
+	<traitement nom_veto="Oak" debut="2017-07-07" fin="2017-07-08">
+		<medicament qte="1">potion</medicament>
+	</traitement>
+</traitements>'),
+9003,'souris');
+
+---------------------------------------------------------------------
