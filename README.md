@@ -17,4 +17,8 @@ Jingyuan Guan, Jiali Xu, Marc Damie, Alix Candusso, Valentin Rousseau
 * Livrable 7 : POC MongoDB
 * Livrable 8 : POC Neo4j
 * Livrable 9 : POC ROv1
+* Livrable 10 : POC ROv2
+* Livrable 11 : POC Oracle XML
+* Livrable 12 : POC PostgreSQL/JSON
+* Livrable 13 : Amélioration d'un POC
  
