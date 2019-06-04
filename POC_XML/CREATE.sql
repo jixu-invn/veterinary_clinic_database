@@ -34,3 +34,4 @@ CREATE TABLE Animaux
             FOREIGN KEY (espece) REFERENCES espece(nom)
           );
           
+COMMIT;
