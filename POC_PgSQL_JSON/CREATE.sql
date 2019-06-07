@@ -15,7 +15,7 @@ CREATE TABLE Clients
               prenom VARCHAR(30) NOT NULL,
               naissance date NOT NULL,
               adresse VARCHAR(300),
-              tel VARCHAR(10) CHECK (REGEXP_LIKE(tel,'[[:digit:]]{10}')),
+              tel VARCHAR(10) CHECK (tel ~ '[[:digit:]]{10}'),
               UNIQUE(nom,prenom,naissance) -- On definit une cle candidate
             );
             
