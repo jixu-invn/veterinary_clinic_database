@@ -4,3 +4,11 @@ INSERT INTO CLASSE VALUES('poisson');
 INSERT INTO CLASSE VALUES('oiseau');
 INSERT INTO CLASSE VALUES('insecte');
 INSERT INTO CLASSE VALUES('arachnide');
+
+INSERT INTO ESPECE VALUES('chien','mammifere');
+INSERT INTO ESPECE VALUES('souris','mammifere');
+INSERT INTO ESPECE VALUES('chat','mammifere');
+INSERT INTO ESPECE VALUES('lezard','reptile');
+INSERT INTO ESPECE VALUES('anaconda','reptile');
+INSERT INTO ESPECE VALUES('peroquet','oiseau');
+INSERT INTO ESPECE VALUES('miguale','arachnide');
