@@ -28,6 +28,18 @@ def insert_animal():
     espace = input("Son espece: ")
 
 
+def insertionClient(conn)
+    print "Vous avez choisi d'inserer un client"
+    id = raw_input("ID: ")
+    nom = raw_input("Nom: ")
+    prenom = raw_input("Prenom: ")
+    naissance = raw_input("Date de naissance: (YYYY-MM-DD)")
+    adresse = raw_input("Adresse: ")
+    telephone = raw_input("Telephone: ")
+
+    sql = "INSERT INTO Clients VALUES("
+    sql = sql+id+nom+prenom+naissance+adresse+telephone+')'
+    conn.execute(sql)
 
 
 
