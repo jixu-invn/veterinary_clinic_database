@@ -28,7 +28,7 @@ def insert_animal():
     espace = input("Son espece: ")
 
 
-def insertionClient(conn)
+def insertionClient(connexion)
     print "Vous avez choisi d'inserer un client"
     id = raw_input("ID: ")
     nom = raw_input("Nom: ")
@@ -39,7 +39,8 @@ def insertionClient(conn)
 
     sql = "INSERT INTO Clients VALUES("
     sql = sql+id+nom+prenom+naissance+adresse+telephone+')'
-    conn.execute(sql)
+    resultat = connexion.cursor()
+    resultat.execute(sql)
 
 
 
