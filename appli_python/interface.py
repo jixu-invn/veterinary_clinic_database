@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import psycopg2 as psy
 import affichage_tables as aff
+import addTraitement as trait
+import json
 
-
+# ajout d'un animal
 def InsertionAnimal(connexion):
     print("Vous avez choisi d'inserer un animal")
     id = input('Id: ')
@@ -37,7 +39,8 @@ def InsertionAnimal(connexion):
     sql = sql + propri + "','" + espece + "');"
     print(sql)
     connexion.cursor().execute(sql)
-
+    
+# ajout d'un client
 def insertionClient(connexion):
     print("Vous avez choisi d'inserer un client")
     sql = "INSERT INTO Clients VALUES("
@@ -139,12 +142,16 @@ def menu_2(connexion):
         print("\n")
         insertionClient(connexion)
     if(choix == "2"):
-        print("\n")
         print("Affichage de la table: Animaux")
         aff.printAnimaux(connexion)
+        print("\n")
         InsertionAnimal(connexion)
-    #if(choix == "3"):
-        
+    if(choix == "3"):
+        print("Affichage de la table: Animaux")
+        aff.printAnimaux(connexion)
+        print("\n")
+        trait.addTraitement(connexion)
+
     
     
 
@@ -186,5 +193,6 @@ if __name__ == "__main__":
         if(c == "0"):
             break
         menu_s(conn,c)
+        conn.commit()
     print("termine")
     
