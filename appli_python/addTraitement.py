@@ -12,7 +12,8 @@ def addTraitement(conection) :
             Print("Entrez un nombre entier!")
             
     sql = "SELECT a.traitement FROM Animaux a WHERE a.id = %d;" % (idAnimal)
-    a = connection.execute(sql)
+    conection.execute(sql)
+    a = conection.fetchall()
     
     attrTraitement = json.loads(a)
     attrTraitement.append(creationTraitementJSON())
