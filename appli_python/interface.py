@@ -3,6 +3,59 @@ import psycopg2 as psy
 import affichage_tables as aff
 
 
+def InsertionAnimal(connexion):
+    print("Vous avez choisi d'inserer un animal")
+    id = input('Id: ')
+
+    while not id.isdigit():
+        id = input('Input invalide, veuillez entrer de nouveau:')
+
+    nom = input('Nom d\'animal:')
+
+    der_poids = input("Son dernier poids:")
+    while (der_poids != '' and float(der_poids) < 0):
+        der_poids = input("Le poids ne doit pas etre negative, veillez entrer de nouveau: \n")
+
+    der_taille = input("Son dernier taille: ")
+    while (der_taille != '' and float(der_taille) < 0):
+        der_taille = input("La taille ne doit pas etre negative, veillez entrer de nouveau: \n")
+
+    annee = input("Son annee de naissance: ")
+    while (annee != '' and ((int(annee) < 1800) or (int(annee) > 2019))):
+        annee = input("L\'annee de naissance est invalide, veuillez entrer de nouveau:\n")
+
+    propri = input("Id du proprietaire: ")
+    while not propri.isdigit():
+        propri = input('Input invalide, veuillez entrer de nouveau: \n')
+
+    espece = input("Son espece: ")
+
+    sql = "INSERT INTO Animaux VALUES("
+    sql = sql + id + ",'" + nom + "',"
+    sql = sql+ der_poids + "," + der_taille + ","
+    sql = sql + annee + ",NULL,'"
+    sql = sql + propri + "','" + espece + "');"
+    print(sql)
+    connexion.cursor().execute(sql)
+
+def insertionClient(connexion):
+    print("Vous avez choisi d'inserer un client")
+    sql = "INSERT INTO Clients VALUES("
+    id = input("ID: ")
+    sql = sql+id+",'"
+    nom = input("Nom: ")
+    sql = sql+nom+"','"
+    prenom = input("Prenom: ")
+    sql = sql+prenom+"','"
+    naissance = input("Date de naissance: (YYYY-MM-DD)")
+    sql = sql+naissance+"','"
+    adresse = input("Adresse: ")
+    sql = sql+adresse+"','"
+    telephone = input("Telephone(10 chiffres sans espace): ")
+    sql = sql+telephone+"')"
+    connexion.cursor().execute(sql)
+
+
 #menu principal
 def menu_p(connexion) :
     print("Bienvenue dans le menu")
@@ -65,12 +118,39 @@ def menu_1(connexion):
         aff.printMedocPrescrits(connexion)
 
 #menu 2 : Ajouter des enregistrements dans la base de données
-#def menu_2(connexion):
+def menu_2(connexion):
+    print("Que voulez vous ajouter?")
+    print("1 : Ajouter des Clients")
+    print("2 : Ajouter des animaux")
+    print("3 : Ajouter des traitements")
+    print("0 pour quitter")
+    choix = 1
+    while choix:
+        try:
+            choix = input("Entrer le nombre correspondant au choix\n")
+            if( choix == "0" or choix == "1" or choix == "2" or choix == "3"):
+                break
+            int("hello")
+        except :
+            print("Le choix n'est pas valide, entrer un nombre")
+    if(choix == "1"):
+        print("Affichage de la table: Clients")
+        aff.printClients(connexion)
+        print("\n")
+        insertionClient(connexion)
+    if(choix == "2"):
+        print("\n")
+        print("Affichage de la table: Animaux")
+        aff.printAnimaux(connexion)
+        InsertionAnimal(connexion)
+    #if(choix == "3"):
+        
+    
     
 
 # menu 3 : Voir le résultat des requetes statistiques
 def menu_3(connexion):
-    print("A quelles statistiques voulez vous afficher?")
+    print("Quelles statistiques voulez vous afficher?")
     print(" 1 : poids et taille moyenne des animaux d'une espèce traitée ")
     print(" 2 : quantité d'un médicament prescrit au total dans la clinique")
     print(" 3 : quantité de chaque type de médicament prescrit pour un animal donné")
@@ -94,6 +174,8 @@ def menu_3(connexion):
         aff.printStatQteMedocParAnimal(connexion)
     if(choix == "4"):
         aff.printStatBonus(connexion)
+        
+
     
         
 if __name__ == "__main__":
