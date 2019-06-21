@@ -35,18 +35,18 @@ def insert_animal(connexion):
 
 def insertionClient(connexion):
     print("Vous avez choisi d'inserer un client")
-    id = raw_input("ID: ")
-    nom = raw_input("Nom: ")
-    prenom = raw_input("Prenom: ")
-    naissance = raw_input("Date de naissance: (YYYY-MM-DD)")
-    adresse = raw_input("Adresse: ")
-    telephone = raw_input("Telephone: ")
-
     sql = "INSERT INTO Clients VALUES("
-    sql = sql+id+nom+prenom+naissance+adresse+telephone+')'
+    id = input("ID: ")
+    sql = sql+id+",'"
+    nom = input("Nom: ")
+    sql = sql+nom+"','"
+    prenom = input("Prenom: ")
+    sql = sql+prenom+"','"
+    naissance = input("Date de naissance: (YYYY-MM-DD)")
+    sql = sql+naissance+"','"
+    adresse = input("Adresse: ")
+    sql = sql+adresse+"','"
+    telephone = input("Telephone(10 chiffres sans espace): ")
+    sql = sql+telephone+"')"
     resultat = connexion.cursor()
     resultat.execute(sql)
-
-
-
-insert_animal()
