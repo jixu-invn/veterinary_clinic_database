@@ -16,8 +16,8 @@ def creationMedicamentJSON() :
 
 
 def creationTraitementJSON() :
-    dateDebut = input("Date de début de traitement (YYYY-MM-DD) : ")
-    dateFin = input("Date de fin de traitement (YYYY-MM-DD) : ")
+    dateDebut = str(input("Date de début de traitement (YYYY-MM-DD) : "))
+    dateFin = str(input("Date de fin de traitement (YYYY-MM-DD) : "))
     veto = creationVetoJSON()
     
     while True :
