@@ -32,6 +32,7 @@ def menu_s(connexion, c):
     if(c == "3"):
         menu_3(connexion)
 
+#menu 1 Voir le contenu de toutes les tables
 def menu_1(connexion):
     print("Quelle table voulez vous voir?")
     print("Tables disponibles:")
@@ -63,6 +64,11 @@ def menu_1(connexion):
         print("Affichage de la table: Medicaments prescrits")
         aff.printMedocPrescrits(connexion)
 
+#menu 2 : Ajouter des enregistrements dans la base de données
+#def menu_2(connexion):
+    
+
+# menu 3 : Voir le résultat des requetes statistiques
 def menu_3(connexion):
     print("A quelles statistiques voulez vous afficher?")
     print(" 1 : poids et taille moyenne des animaux d'une espèce traitée ")
