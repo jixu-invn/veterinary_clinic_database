@@ -2,12 +2,6 @@
 import psycopg2 as psy
 from prettytable import PrettyTable
 
-
-#Requete qui affiche une collection dans une collection
-#Pour chaque animal tous les médicaments qui lui ont été prescrit
-
-
-
 def printClients(connexion):
     t = PrettyTable(['id','Nom','Prenom','Naissance','Adresse', 'Tel'])
     resultat = connexion.cursor()
