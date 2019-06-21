@@ -12,8 +12,9 @@ def addTraitement(conection) :
             Print("Entrez un nombre entier!")
             
     sql = "SELECT COALESCE(a.traitement, 0) FROM Animaux a WHERE a.id = %d;" % (idAnimal)
-    conection.execute(sql)
-    a = conection.fetchone()
+    cur = conection.cursor()
+    cur.execute(sql)
+    a = cur.fetchone()
     
     if a[0] == "0" :
         traitement = creationTraitementJSON()
@@ -24,7 +25,8 @@ def addTraitement(conection) :
         attrTraitement = json.dumps(attrTraitement)
     
     sqlUpdate = "UPDATE Animaux SET traitement = %s WHERE id = %d;" % (attrTraitement, idAnimal)
-    conection.execute(sqlUpdate)
+    cur.execute(sqlUpdate)
+    
     
 if __name__ == "__main__" :
     pass
