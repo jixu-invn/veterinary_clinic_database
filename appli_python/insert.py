@@ -28,7 +28,11 @@ def insert_animal(connexion):
     espece = input("Son espece: ")
 
     sql = "INSERT INTO Animaux VALUES("
-    sql = sql + id + nom + der_poids + der_taille + annee + traitement + propri + espece + ')'
+    sql = sql + id + ",'" + nom + "',"
+    sql = sql+ der_poids + "," + der_taille + ","
+    sql = sql + annee + ",'" + traitement + "','"
+    sql = sql + propri + "','" + espece + "');"
+    print(sql)
     resultat = connexion.cursor()
     resultat.execute(sql)
 
@@ -39,14 +43,18 @@ def insertionClient(connexion):
     id = input("ID: ")
     sql = sql+id+",'"
     nom = input("Nom: ")
-    sql = sql+nom+"','"
+    sql = sql+nom+"",""
     prenom = input("Prenom: ")
-    sql = sql+prenom+"','"
+    sql = sql+prenom+"",""
     naissance = input("Date de naissance: (YYYY-MM-DD)")
-    sql = sql+naissance+"','"
+    sql = sql+naissance+"",""
     adresse = input("Adresse: ")
-    sql = sql+adresse+"','"
+    sql = sql+adresse+"",""
     telephone = input("Telephone(10 chiffres sans espace): ")
     sql = sql+telephone+"')"
     resultat = connexion.cursor()
     resultat.execute(sql)
+
+
+
+insert_animal("connexion")
