@@ -13,7 +13,7 @@ def addTraitement(conection) :
             
     sql = "SELECT a.traitement FROM Animaux a WHERE a.id = %d;" % (idAnimal)
     conection.execute(sql)
-    a = conection.fetchall()
+    a = conection.fetchone()
     
     attrTraitement = json.loads(a)
     attrTraitement.append(creationTraitementJSON())
