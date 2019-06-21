@@ -23,7 +23,7 @@ def menu_p(connexion) :
     
     return choix
             
-
+#menu secondaire
 def menu_s(connexion, c):
     if(c == "1"):
         menu_1(connexion)
@@ -62,12 +62,41 @@ def menu_1(connexion):
     if(choix == "4"):
         print("Affichage de la table: Medicaments prescrits")
         aff.printMedocPrescrits(connexion)
+
+def menu_3(connexion):
+    print("A quelles statistiques voulez vous afficher?")
+    print(" 1 : poids et taille moyenne des animaux d'une espèce traitée ")
+    print(" 2 : quantité d'un médicament prescrit au total dans la clinique")
+    print(" 3 : quantité de chaque type de médicament prescrit pour un animal donné")
+    print(" 4 : Statistique bonus: Nombre de vétérinaires consultés par chaque client")
+    print("0 pour quitter")
+    choix = 1
+    while choix:
+        try:
+            choix = input("Entrer le nombre correspondant au choix\n")
+            if( choix == "0" or choix == "1" or choix == "2" or choix == "3" or choix == "4"):
+                break
+            int("hello")
+        except :
+            print("Le choix n'est pas valide, entrer un nombre")
             
+    if(choix == "1"):
+        aff.printStatMoyennesEspeces(connexion)
+    if(choix == "2"):
+        aff.printStatGlobalesMedoc(connexion)
+    if(choix == "3"):
+        aff.printStatQteMedocParAnimal(connexion)
+    if(choix == "4"):
+        aff.printStatBonus(connexion)
+    
         
 if __name__ == "__main__":
     conn = psy.connect("dbname = 'dbbdd0p050' user='bdd0p050' host='tuxa.sme.utc' password='oN37PaLy'")
-    c = menu_p(conn)
-    print("Vous avez selectionne le choix " + c)
-    menu_s(conn,c)
+    while 1 :
+        c = menu_p(conn)
+        print("Vous avez selectionne le choix " + c)
+        if(c == "0"):
+            break
+        menu_s(conn,c)
     print("termine")
     
