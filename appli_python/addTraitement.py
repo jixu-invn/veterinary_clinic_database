@@ -24,7 +24,7 @@ def addTraitement(conection) :
         attrTraitement = json.dumps(attrTraitement)
     
     sqlUpdate = "UPDATE Animaux SET traitement = %s WHERE id = %d;" % (attrTraitement, idAnimal)
-    connection.execute(sqlUpdate)
+    conection.execute(sqlUpdate)
     
 if __name__ == "__main__" :
     pass
