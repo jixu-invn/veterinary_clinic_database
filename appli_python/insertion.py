@@ -1,13 +1,14 @@
-def insert_animal(connexion):
-    print('C\'est pour inserer un animal.\n')
+
+def InsertionAnimal(connexion):
+    print("Vous avez choisi d'inserer un animal")
     id = input('Id: ')
 
     while not id.isdigit():
-        id = input('Input invalide, veuillez entrer de nouveau: \n')
+        id = input('Input invalide, veuillez entrer de nouveau:')
 
-    nom = input('Nom d\'animal (s\'il est vide, veuillez entrer): \n')
+    nom = input('Nom d\'animal:')
 
-    der_poids = input("Son dernier poids: ")
+    der_poids = input("Son dernier poids:")
     while (der_poids != '' and float(der_poids) < 0):
         der_poids = input("Le poids ne doit pas etre negative, veillez entrer de nouveau: \n")
 
@@ -19,8 +20,6 @@ def insert_animal(connexion):
     while (annee != '' and ((int(annee) < 1800) or (int(annee) > 2019))):
         annee = input("L\'annee de naissance est invalide, veuillez entrer de nouveau:\n")
 
-    traitement = input("Son traitement: \n")
-
     propri = input("Id du proprietaire: ")
     while not propri.isdigit():
         propri = input('Input invalide, veuillez entrer de nouveau: \n')
@@ -30,12 +29,10 @@ def insert_animal(connexion):
     sql = "INSERT INTO Animaux VALUES("
     sql = sql + id + ",'" + nom + "',"
     sql = sql+ der_poids + "," + der_taille + ","
-    sql = sql + annee + ",'" + traitement + "','"
+    sql = sql + annee + ",NULL,'"
     sql = sql + propri + "','" + espece + "');"
     print(sql)
-    resultat = connexion.cursor()
-    resultat.execute(sql)
-
+    connexion.cursor().execute(sql)
 
 def insertionClient(connexion):
     print("Vous avez choisi d'inserer un client")
@@ -52,9 +49,4 @@ def insertionClient(connexion):
     sql = sql+adresse+"",""
     telephone = input("Telephone(10 chiffres sans espace): ")
     sql = sql+telephone+"')"
-    resultat = connexion.cursor()
-    resultat.execute(sql)
-
-
-
-insert_animal("connexion")
+    connexion.cursor().execute(sql)
