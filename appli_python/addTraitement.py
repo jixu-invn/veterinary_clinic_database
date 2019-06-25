@@ -9,7 +9,7 @@ def addTraitement(conection) :
             idAnimal = int(idAnimal)
             break
         except :
-            Print("Entrez un nombre entier!")
+            print("Entrez un nombre entier!")
             
     cur = conection.cursor()
     sql = "SELECT a.traitements FROM Animaux a WHERE a.id = %d;" % (idAnimal)
@@ -20,11 +20,11 @@ def addTraitement(conection) :
         traitement = creationTraitementJSON()
         attrTraitement = json.dumps(traitement)
     else :
-        attrTraitement = json.loads(a)
-        attrTraitement.append(creationTraitementJSON())
+        attrTraitement = json.loads(json.dumps(a[0]))
+        attrTraitement.append(json.loads(json.dumps(creationTraitementJSON())))
         attrTraitement = json.dumps(attrTraitement)
     
-    sqlUpdate = "UPDATE Animaux SET traitements = '[%s]' WHERE id = %d;" % (attrTraitement, idAnimal)
+    sqlUpdate = "UPDATE Animaux SET traitements = '%s' WHERE id = %d;" % (attrTraitement, idAnimal)
     cur.execute(sqlUpdate)
     
 if __name__ == "__main__" :
