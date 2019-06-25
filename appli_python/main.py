@@ -172,7 +172,7 @@ def menu_3(connexion):
         
 if __name__ == "__main__":
     conn = psy.connect("dbname = 'dbbdd0p050' user='bdd0p050' host='tuxa.sme.utc' password='oN37PaLy'")
-    while 1 :
+    while True :
         c = menu_p(conn)
         print("Vous avez selectionne le choix " + c + "\n")
         if(c == "0"):
