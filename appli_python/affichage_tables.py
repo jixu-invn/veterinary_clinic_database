@@ -34,9 +34,9 @@ def printAnimaux(connexion):
  
  
 def printMedocPrescrits(connexion):
-    t = PrettyTable(['ID Animal','ID proprietaire','Medicament prescrit'])
+    t = PrettyTable(['ID Animal','ID proprietaire','Date de début','Date de fin de traitement','Medicament prescrit', 'Quantité journalière'])
     resultat = connexion.cursor()
-    resultat.execute("SELECT a.id, a.proprietaire, m->>'molecule' \
+    resultat.execute("SELECT a.id, a.proprietaire, t->>'debut', t->>'fin', m->>'molecule', m->>'qte' \
                         FROM animaux a, JSON_ARRAY_ELEMENTS(a.traitements) t, JSON_ARRAY_ELEMENTS(t->'medicaments') m")
     
     for ligne in resultat.fetchall():

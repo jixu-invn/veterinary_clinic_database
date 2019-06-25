@@ -3,17 +3,17 @@ from datetime import datetime
 def creationVetoJSON() :
     nom = str(input("Nom du vétérinaire : "))
     prenom = str(input("Prenom du vétérinaire : "))
-    return({"nom":nom, "prenom":prenom})
+    return({"nom":nom, "pnom":prenom})
             
 def creationMedicamentJSON() :
     molecule = str(input("Nom du médicament : "))
     while True :
         try :
-            conditionnement = int(input("Conditionnement du médicament : "))
+            qte = int(input("Quantité journalière du médicament : "))
             break
         except :
-            print("Le conditionnement doit être un entier!")
-    return({"molecule" : molecule, "conditionnement" : conditionnement})
+            print("Le quantité doit être un entier!")
+    return({"molecule" : molecule, "qte" : qte})
 
 
 def creerDate() :

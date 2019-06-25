@@ -61,21 +61,17 @@ def insertionClient(connexion):
 
 #menu principal
 def menu_p(connexion) :
-    print("Bienvenue dans le menu")
+    print("\n\n+++++++++++++\nBienvenue dans le menu\n+++++++++++++")
     print("Vos choix")
     print(" 1 : Voir le contenu de toutes les tables ")
     print(" 2 : Ajouter des enregistrements dans la base de données")
     print(" 3 : Voir le résultat des requetes statistiques")
-    print(" 0 pour quitter")
-    choix = 4
-    while choix : 
-        try :
-            choix = input("Entrer le nombre correspondant au choix\n")
-            if( choix == "0" or choix == "1" or choix == "2" or choix == "3"):
-                break
-            int("hello")
-        except :
-            print("Le choix n'est pas valide, entrer un nombre")
+    print(" 0 pour quitter\n+++++++++++++")
+    choix = False
+    while not choix:
+        choix = input("Entrer le nombre correspondant au choix : ")
+        if(choix != "0" and choix != "1" and choix != "2" and choix != "3" and choix != "4"):
+            choix = False
     
     return choix
             
@@ -90,22 +86,18 @@ def menu_s(connexion, c):
 
 #menu 1 Voir le contenu de toutes les tables
 def menu_1(connexion):
-    print("Quelle table voulez vous voir?")
+    print("\n\n+++++++++++++\nQuelle table voulez vous voir?")
     print("Tables disponibles:")
     print("1 : Clients")
     print("2 : Especes Animales")
     print("3 : Animaux")
     print("4 : Medicaments prescrits")
-    print("0 pour quitter")
-    choix = 1
-    while choix:
-        try:
-            choix = input("Entrer le nombre correspondant au choix\n")
-            if( choix == "0" or choix == "1" or choix == "2" or choix == "3" or choix == "4"):
-                break
-            int("hello")
-        except :
-            print("Le choix n'est pas valide, entrer un nombre")
+    print("0 pour quitter\n+++++++++++++")
+    choix = False
+    while not choix:
+        choix = input("Entrer le nombre correspondant au choix : ")
+        if( choix != "0" and choix != "1" and choix != "2" and choix != "3" and choix != "4"):
+            choix = False
             
     if(choix == "1"):
         print("Affichage de la table: Clients")
@@ -122,20 +114,17 @@ def menu_1(connexion):
 
 #menu 2 : Ajouter des enregistrements dans la base de données
 def menu_2(connexion):
-    print("Que voulez vous ajouter?")
+    print("\n\n+++++++++++++\nQue voulez vous ajouter?")
     print("1 : Ajouter des Clients")
     print("2 : Ajouter des animaux")
     print("3 : Ajouter des traitements")
-    print("0 pour quitter")
-    choix = 1
-    while choix:
-        try:
-            choix = input("Entrer le nombre correspondant au choix\n")
-            if( choix == "0" or choix == "1" or choix == "2" or choix == "3"):
-                break
-            int("hello")
-        except :
-            print("Le choix n'est pas valide, entrer un nombre")
+    print("0 pour quitter\n+++++++++++++")
+    choix = False
+    while not choix:
+        choix = input("Entrer le nombre correspondant au choix : ")
+        if( choix != "0" and choix != "1" and choix != "2" and choix != "3"):
+            choix = False
+
     if(choix == "1"):
         print("Affichage de la table: Clients")
         aff.printClients(connexion)
@@ -157,21 +146,17 @@ def menu_2(connexion):
 
 # menu 3 : Voir le résultat des requetes statistiques
 def menu_3(connexion):
-    print("Quelles statistiques voulez vous afficher?")
+    print("\n\n+++++++++++++\n Quelles statistiques voulez vous afficher?")
     print(" 1 : poids et taille moyenne des animaux d'une espèce traitée ")
     print(" 2 : quantité d'un médicament prescrit au total dans la clinique")
     print(" 3 : quantité de chaque type de médicament prescrit pour un animal donné")
     print(" 4 : Statistique bonus: Nombre de vétérinaires consultés par chaque client")
-    print("0 pour quitter")
-    choix = 1
-    while choix:
-        try:
-            choix = input("Entrer le nombre correspondant au choix\n")
-            if( choix == "0" or choix == "1" or choix == "2" or choix == "3" or choix == "4"):
-                break
-            int("hello")
-        except :
-            print("Le choix n'est pas valide, entrer un nombre")
+    print("0 pour quitter\n+++++++++++++")
+    choix = False
+    while not choix:
+        choix = input("Entrer le nombre correspondant au choix : ")
+        if( choix != "0" and choix != "1" and choix != "2" and choix != "3" and choix != "4"):
+            choix = False
             
     if(choix == "1"):
         aff.printStatMoyennesEspeces(connexion)
@@ -189,10 +174,10 @@ if __name__ == "__main__":
     conn = psy.connect("dbname = 'dbbdd0p050' user='bdd0p050' host='tuxa.sme.utc' password='oN37PaLy'")
     while 1 :
         c = menu_p(conn)
-        print("Vous avez selectionne le choix " + c)
+        print("Vous avez selectionne le choix " + c + "\n")
         if(c == "0"):
             break
         menu_s(conn,c)
         conn.commit()
-    print("termine")
+    print("+++++++++++++\nFermeture de la clinique\n+++++++++++++")
     
