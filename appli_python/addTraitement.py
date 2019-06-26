@@ -8,7 +8,7 @@ def addTraitement(conection) :
     que le traitement est cree proprement.'''
     while True :
         try :
-            idAnimal = input("Id de l'animal : ")
+            idAnimal = input("ID de l'animal : ")
             idAnimal = int(idAnimal)
             break
         except :
@@ -22,6 +22,7 @@ def addTraitement(conection) :
     if a[0] == None :
         traitement = creationTraitementJSON()
         attrTraitement = json.dumps(traitement)
+        attrTraitement = '['+attrTraitement+']'
     else :
         attrTraitement = json.loads(json.dumps(a[0]))
         attrTraitement.append(json.loads(json.dumps(creationTraitementJSON())))
