@@ -3,6 +3,9 @@ import json
 from creationTraitementDict import creationTraitementJSON
 
 def addTraitement(conection) :
+    '''Fonction permettant de rajouter un traitement a un animal dans la base de
+    donnees. Cette fonction fait appel a creationTraitementJSON() pour s'assurer
+    que le traitement est cree proprement.'''
     while True :
         try :
             idAnimal = input("Id de l'animal : ")
